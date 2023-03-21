@@ -8,9 +8,13 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	
-		qna.jsp
-		<!-- 수정 내용입니다 -->
+	<div align = "center">
+		<hr width = "50%" color = "blue">
+		<h3>Q&A</h3>
+		<hr width = "50%" color = "blue">
+		<br>
+		<a href = "<%=request.getContextPath() %>/qna.select.do">[전체 Q&A 게시물 목록]</a>
+	</div>
 	<%@include file="footer.jsp" %>
 </body>
 </html>
