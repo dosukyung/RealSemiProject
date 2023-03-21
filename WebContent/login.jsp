@@ -17,7 +17,7 @@
 		<button type="submit">로그인</button>		
 	</form>
 	<a href="join.jsp"> 회원가입 </a>
-	
+	<%-- 수경 수정 --%>
 
 	
 	<%@include file="footer.jsp" %>
