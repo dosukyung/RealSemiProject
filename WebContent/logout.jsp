@@ -10,7 +10,7 @@
 <body>
 	<%
 		session.invalidate();
-		response.sendRedirect("/main.jsp");
+		response.sendRedirect("main.jsp");
 	%>
 </body>
 </html>
