@@ -13,7 +13,7 @@
 	
 	<form method="post" action="login.member.do">
 		아이디 <input type="text" name="id"> <br>
-		비번임 <input type="password" name="pwd">
+		비번을색다르게바꿔봄비번: <input type="password" name="pwd">
 		<button type="submit">로그인</button>		
 	</form>
 	<a href="join.jsp"> 회원가입 </a>
