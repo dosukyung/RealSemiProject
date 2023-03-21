@@ -10,7 +10,7 @@
 	<%@include file="header.jsp" %>
 	
 		qna.jsp
-		
+		<!-- 수정 내용입니다 -->
 	<%@include file="footer.jsp" %>
 </body>
 </html>
