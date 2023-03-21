@@ -37,9 +37,11 @@ public class FrontController extends HttpServlet {
 		Action action = null;
 		
 		if(command.equals("insert.member.do")) {
-			action = new MemberInsert();
+			action = new MemberInsert(); // 회원가입
 		}else if(command.equals("login.member.do")) {
-			action = new MemberLogin();
+			action = new MemberLogin(); // 로그인
+		}else if(command.equals("content.member.do")) {
+			action = new MemberContent();  // 개인정보
 		}
 		
 		

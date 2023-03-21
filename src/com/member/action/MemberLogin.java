@@ -13,8 +13,8 @@ public class MemberLogin implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String id = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
+		String id = request.getParameter("id").trim();
+		String pwd = request.getParameter("pwd").trim();
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		

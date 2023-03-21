@@ -5,13 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 
 	<%@include file="header.jsp" %>
-	
-	서울시 지도
-	
+
 	<a href="board.jsp?location='종로구'">종로구</a>
 	
 	<%@include file="footer.jsp" %>
