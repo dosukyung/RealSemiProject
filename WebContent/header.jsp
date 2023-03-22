@@ -11,7 +11,7 @@
 	<% 
 		if(session.getAttribute("UserId") == null){
 	%>
-		<a href="myinformation.jsp">내 정보</a>
+		<a href="m_myinformation.jsp">내 정보</a>
 	<% 
 		}else{
 	%>
@@ -26,13 +26,13 @@
 	<%
 		if(session.getAttribute("UserId") == null){
 	%>
-			<a href="login.jsp">로그인</a>
+			<a href="m_login.jsp">로그인</a>
 	
 	<% 
 		}else{
 			String userId = (String)session.getAttribute("UserId");
 			out.println(userId + "님 반갑습니다." );
-			out.println("<a href='logout.jsp'>로그아웃</a>");
+			out.println("<a href='m_logout.jsp'>로그아웃</a>");
 		}
 		
 	%> 

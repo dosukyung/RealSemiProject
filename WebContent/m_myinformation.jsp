@@ -34,6 +34,14 @@
 				<th> 회원 닉네임</th>
 				<td> ${Dto.getMember_nick()} </td>
 			</tr>
+			<tr>
+				<th> 회원 나이</th>
+				<td> ${Dto.getMember_age()} </td>
+			</tr>
+			<tr>
+				<th> 회원 주소</th>
+				<td> ${Dto.getMember_addr1()} ${Dto.getMember_addr2()} ${Dto.getMember_addr3()} </td>
+			</tr>
 		</table>
 		
 	<%} %>

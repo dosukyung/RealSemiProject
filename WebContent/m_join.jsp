@@ -10,7 +10,6 @@
 <body>
 	<%@include file="header.jsp" %>
 	
-	Join.jsp
 	<form method="post" action="insert.member.do">
 		<table border="1" cellspacing="0">
 			<tr>
