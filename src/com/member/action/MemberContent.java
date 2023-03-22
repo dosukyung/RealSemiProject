@@ -19,7 +19,7 @@ public class MemberContent implements Action {
 		MemberDTO dto = dao.contentById(id);
 		
 		request.setAttribute("Dto", dto);
-		return "myinformation.jsp";
+		return "m_myinformation.jsp";
 	}
 
 }

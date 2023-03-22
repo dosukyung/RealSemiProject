@@ -36,7 +36,7 @@ public class MemberInsert implements Action {
 		if(res > 0) {
 			out.println("<script>");
 			out.println("alert('회원가입 성공햇심')");
-			out.println("location.href='login.jsp'");
+			out.println("location.href='m_login.jsp'");
 			out.println("</script>");
 		}else {
 			out.println("<script>");
