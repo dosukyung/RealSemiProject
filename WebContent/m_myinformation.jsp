@@ -45,7 +45,8 @@
 		</table>
 		
 	<%} %>
-	 
+	 <button onclick="location.href='modify.member.do?no=${Dto.getMember_num()}'">회원정보수정</button>
+	 <button onclick="location.href='delete.do?no=${Dto.getMember_num()}'">회원정보삭제</button>
 
 	<%@include file="/footer.jsp" %>
 	

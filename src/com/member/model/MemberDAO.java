@@ -188,4 +188,98 @@ public class MemberDAO {
 		
 		return dto;
 	}
+	
+	public MemberDTO contentByNum(int no) {
+		MemberDTO dto = new MemberDTO();
+		openConn();
+		try {
+			sql = "select * from member where member_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setMember_id(rs.getString("member_id"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_age(rs.getInt("member_age"));
+				dto.setMember_addr1(rs.getString("member_addr1"));
+				dto.setMember_addr2(rs.getString("member_addr2"));
+				dto.setMember_addr3(rs.getString("member_addr3"));
+				dto.setMember_animal1(rs.getString("member_animal1"));
+				dto.setMember_animal2(rs.getString("member_animal2"));
+				dto.setMember_animal3(rs.getString("member_animal3"));
+				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_email(rs.getString("member_email"));
+				dto.setMember_name(rs.getString("member_name"));
+				dto.setMember_nick(rs.getString("member_nick"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_num(rs.getInt("member_num"));
+				dto.setMember_phone(rs.getString("member_phone"));
+				dto.setMember_self(rs.getString("member_self"));
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return dto;
+	}
+	
+	public int ModifyMember(MemberDTO dto) {
+		int result = 0;
+		openConn();
+		try {
+			sql = "update member set member_age = ?, member_email = ?, member_nick = ?, member_pwd = ?, member_phone = ?, member_self = ? where member_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, dto.getMember_age());
+			pstmt.setString(2, dto.getMember_email());
+			pstmt.setString(3, dto.getMember_nick());
+			pstmt.setString(4, dto.getMember_pwd());
+			pstmt.setString(5, dto.getMember_phone());
+			pstmt.setString(6, dto.getMember_self());
+			pstmt.setInt(7, dto.getMember_num());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+	}
+	
+	public void updateSequence(int no) {
+		openConn();
+		try {
+			sql = "update member set member_num = member_num - 1 where member_no > ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+	}
+	
+	public int deleteMember(int no) {
+		int result = 0;
+		openConn();
+		try {
+			sql ="delete from member where member_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+	}
 }

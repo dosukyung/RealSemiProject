@@ -44,6 +44,14 @@ public class FrontController extends HttpServlet {
 			action = new MemberContent();  // 개인정보
 		}else if(command.equals("idcheck.member.do")) {
 			action =new MemberIdCheck();
+		}else if(command.equals("modify.member.do")) {
+			action = new ModifyContent();
+		}else if(command.equals("modify.ok.member.do")) {
+			action = new ModifyOkContent();
+		}else if(command.equals("delete.do")) {
+			action = new DeleteContent();
+		}else if(command.equals("delete.ok.do")) {
+			action = new DeleteOkContent();
 		}
 		
 		
