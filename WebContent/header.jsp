@@ -21,7 +21,7 @@
 		}
 	%>
 		
-	<a href="qna.jsp">QnA</a>
+	<a href="qna_main.jsp">QnA</a>
 	
 	<%
 		if(session.getAttribute("UserId") == null){
