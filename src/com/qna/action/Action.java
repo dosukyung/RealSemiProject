@@ -1,4 +1,4 @@
-package com.member.action;
+package com.qna.action;
 
 import java.io.IOException;
 
@@ -7,6 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface Action {
 
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException;
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException;
 	
 }

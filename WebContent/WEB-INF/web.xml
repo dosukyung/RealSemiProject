@@ -14,10 +14,18 @@
 	<servlet-name>FrontController</servlet-name>
 	<servlet-class>com.member.controller.FrontController</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>QFrontController</servlet-name>
+	<servlet-class>com.qna.controller.QFrontController</servlet-class>
+</servlet>
   
 <servlet-mapping>
 	<servlet-name>FrontController</servlet-name>
 	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>QFrontController</servlet-name>
+	<url-pattern>*.so</url-pattern>
 </servlet-mapping>
   
 </web-app>
