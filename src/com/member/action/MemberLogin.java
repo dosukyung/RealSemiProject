@@ -27,6 +27,7 @@ public class MemberLogin implements Action {
 			int pwdCheck = dao.checkPwd(id, pwd);
 			if(pwdCheck == 1) {
 				// 로그인 성공
+				
 				HttpSession session = request.getSession();
 				session.setAttribute("UserId", id);
 				out.println("<script>");
