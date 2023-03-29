@@ -13,9 +13,9 @@ public class MemberDTO {
 	String member_self;
 	String member_nick;
 	String member_gender;
-	String member_animal1;
-	String member_animal2;
-	String member_animal3;
+	int member_animal1;
+	int member_animal2;
+	int member_animal3;
 	String member_id;
 	String member_pwd;
 	
@@ -85,22 +85,22 @@ public class MemberDTO {
 	public void setMember_gender(String member_gender) {
 		this.member_gender = member_gender;
 	}
-	public String getMember_animal1() {
+	public int getMember_animal1() {
 		return member_animal1;
 	}
-	public void setMember_animal1(String member_animal1) {
+	public void setMember_animal1(int member_animal1) {
 		this.member_animal1 = member_animal1;
 	}
-	public String getMember_animal2() {
+	public int getMember_animal2() {
 		return member_animal2;
 	}
-	public void setMember_animal2(String member_animal2) {
+	public void setMember_animal2(int member_animal2) {
 		this.member_animal2 = member_animal2;
 	}
-	public String getMember_animal3() {
+	public int getMember_animal3() {
 		return member_animal3;
 	}
-	public void setMember_animal3(String member_animal3) {
+	public void setMember_animal3(int member_animal3) {
 		this.member_animal3 = member_animal3;
 	}
 	public String getMember_id() {

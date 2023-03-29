@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +43,42 @@
 				<th> 회원 주소</th>
 				<td> ${Dto.getMember_addr1()} ${Dto.getMember_addr2()} ${Dto.getMember_addr3()} </td>
 			</tr>
+			<tr>
+				<th> 첫번째 반려동물 </th>
+				<c:if test="${Animal1 ne '애완동물 미등록'}">
+					<td> <a href="AnimalContent.no?no=${Animal1no}">${Animal1}</a></td>
+				</c:if>
+				<c:if test="${Animal1 eq '애완동물 미등록'}">
+					<td> ${Animal1}</td>
+				</c:if>
+			</tr>
+			<tr>
+				<th> 두번째 반려동물 </th>
+				<c:if test="${Animal2 ne '애완동물 미등록'}">
+					<td> <a href="AnimalContent.no?no=${Animal2no}">${Animal2}</a></td>
+				</c:if>
+				<c:if test="${Animal2 eq '애완동물 미등록'}">
+					<td> ${Animal2}</td>
+				</c:if>
+			</tr>
+			<tr>
+				<th> 세번째 반려동물 </th>
+				<c:if test="${Animal3 ne '애완동물 미등록'}">
+					<td> <a href="AnimalContent.no?no=${Animal3no}">${Animal3}</a></td>
+				</c:if>
+				<c:if test="${Animal3 eq '애완동물 미등록'}">
+					<td> ${Animal3}</td>
+				</c:if>
+			</tr>
 		</table>
+		<br>
+		
+		
 		
 	<%} %>
 	 <button onclick="location.href='modify.member.do?no=${Dto.getMember_num()}'">회원정보수정</button>
 	 <button onclick="location.href='delete.do?no=${Dto.getMember_num()}'">회원정보삭제</button>
-
+	 <button onclick="location.href='AniamlInsert.no?no=${Dto.getMember_num()}'">동물 등록하기</button>
 	<%@include file="/footer.jsp" %>
 	
 </body>

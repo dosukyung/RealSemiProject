@@ -167,9 +167,9 @@ public class MemberDAO {
 				dto.setMember_addr1(rs.getString("member_addr1"));
 				dto.setMember_addr2(rs.getString("member_addr2"));
 				dto.setMember_addr3(rs.getString("member_addr3"));
-				dto.setMember_animal1(rs.getString("member_animal1"));
-				dto.setMember_animal2(rs.getString("member_animal2"));
-				dto.setMember_animal3(rs.getString("member_animal3"));
+				dto.setMember_animal1(rs.getInt("member_animal1"));
+				dto.setMember_animal2(rs.getInt("member_animal2"));
+				dto.setMember_animal3(rs.getInt("member_animal3"));
 				dto.setMember_gender(rs.getString("member_age"));
 				dto.setMember_email(rs.getString("member_email"));
 				dto.setMember_name(rs.getString("member_name"));
@@ -205,9 +205,9 @@ public class MemberDAO {
 				dto.setMember_addr1(rs.getString("member_addr1"));
 				dto.setMember_addr2(rs.getString("member_addr2"));
 				dto.setMember_addr3(rs.getString("member_addr3"));
-				dto.setMember_animal1(rs.getString("member_animal1"));
-				dto.setMember_animal2(rs.getString("member_animal2"));
-				dto.setMember_animal3(rs.getString("member_animal3"));
+				dto.setMember_animal1(rs.getInt("member_animal1"));
+				dto.setMember_animal2(rs.getInt("member_animal2"));
+				dto.setMember_animal3(rs.getInt("member_animal3"));
 				dto.setMember_gender(rs.getString("member_age"));
 				dto.setMember_email(rs.getString("member_email"));
 				dto.setMember_name(rs.getString("member_name"));
@@ -255,7 +255,7 @@ public class MemberDAO {
 	public void updateSequence(int no) {
 		openConn();
 		try {
-			sql = "update member set member_num = member_num - 1 where member_no > ?";
+			sql = "update member set member_num = member_num - 1 where member_num > ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
