@@ -1,7 +1,15 @@
+<%@page import="com.member.model.MemberDTO"%>
+<%@page import="com.member.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<% 
+   String location = request.getParameter("location"); 
+   String UserId = (String)session.getAttribute("UserId");
+   MemberDAO mdao = MemberDAO.getInstance();
+   MemberDTO dto = mdao.contentById(UserId);
+   String nick = dto.getMember_nick();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +42,11 @@
 </style>
 <script type="text/javascript">
 	function check() {
+		if(f.field.value == "") {
+			alert("말머리를 선택하세요.");
+			f.field.focus();
+			return false;
+		}
 		if(f.title.value == "") {
 			alert("글 제목을 입력하세요.");
 			f.title.focus();
@@ -50,49 +63,51 @@
 <body>
 	<%@include file="header.jsp"%>
 	<div align="center">
-		<hr width="50%" color="red">
-		<h3>Q&A 고객센터 게시글 전체 리스트 페이지</h3>
-		<hr width="50%" color="red">
+		<hr width="50%" color="blue">
+		<h3><%=location %> 게시판 </h3>
+		<hr width="50%" color="blue">
 		<br>
 		<%-- 페이징 처리 영역 --%>
 		<form method="post"
-			action="<%=request.getContextPath() %>/qna_search.so">
+			action="<%=request.getContextPath() %>/board_search.so">
 			<select name="field">
-				<option value="title">전체 글보기</option>
-				<option value="account">계정</option>
-				<option value="report">신고</option>
-				<option value="else">기타</option>
+				<option value="head">말머리</option>
+				<option value="writer">작성자</option>
+				<option value="title">제목</option>
+				<option value="cont">내용</option>
 			</select> <input type="text" name="keyword">&nbsp;&nbsp; <input
 				type="submit" value="검색">
 		</form>
 		<br>
 		<table border="1" cellspacing="0" width="400">
 			<tr>
-				<td colspan="5" align="right">전체 게시물 수 : ${totalRecord}개
+				<td colspan="6" align="right">전체 게시물 수 : ${totalRecord}개
 			</tr>
 			<tr>
-				<th>글번호</th>
+				<th>No.</th>
 				<th>말머리</th>
-				<th>글제목</th>
+				<th>글 제목</th>
+				<th>작성자</th>
 				<th>조회수</th>
-				<th>작성일자</th>
+				<th>작성 일자</th>
 			</tr>
 			<c:set var="list" value="${List}" />
 			<c:if test="${!empty list}">
 				<c:forEach items="${list}" var="dto">
 					<tr>
-						<td>${dto.getQna_num()}</td>
-						<td>${dto.getQna_head()}</td>
+						<td>${dto.getBoard_num()}</td>
+						<td>${dto.getBoard_head()}</td>
 						<td><a
-							href="<%=request.getContextPath() %>/qna_content.so?no=${dto.getQna_num() }&page=${page}">${dto.getQna_title() }</a></td>
-						<td>${dto.getQna_hit()}</td>
-						<td>${dto.getQna_regdate().substring(0, 10)}</td>
+							href="<%=request.getContextPath() %>/board_content.go?no=${dto.getBoard_num() }&page=${page}">${dto.getBoard_title() }</a></td>
+						<td><%=nick%></td>
+						<td>${dto.getBoard_hit()}</td>
+						<td>${dto.getBoard_regdate().substring(0, 10)}</td>
 					</tr>
 				</c:forEach>
 			</c:if>
 			<c:if test="${empty list}">
 				<tr>
-					<td colspan="5" align="center">
+					<td colspan="7" align="center">
 						<h3>전체 게시물 리스트가 없습니다.</h3>
 				</tr>
 			</c:if>
@@ -107,7 +122,7 @@
 			}else{
 		%>
 		<button type="button" class="btn btn-primary" data-toggle="modal"
-			data-target="#qnaModal">게시글 작성</button>
+			data-target="#boardModal">게시글 작성</button>
 		<br>
 
 		<%	
@@ -116,12 +131,12 @@
 
 
 		<!-- Modal -->
-		<div class="modal fade" id="qnaModal" tabindex="-1"
-			aria-labelledby="qnaModalLabel" aria-hidden="true">
+		<div class="modal fade" id="boardModal" tabindex="-1"
+			aria-labelledby="boardModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="qnaModalLabel">Q&A 고객센터 게시글 등록 폼
+						<h5 class="modal-title" id="boardModalLabel">Q&A 고객센터 게시글 등록 폼
 							페이지</h5>
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
@@ -130,35 +145,41 @@
 					</div>
 					<div class="modal-body">
 						<form method="post" name="f"
-							action="<%=request.getContextPath() %>/qna_write_ok.so"
+							action="<%=request.getContextPath() %>/board_write_ok.go"
 							onsubmit="return check()">
 							<table border="1" cellspacing="0" width="300">
 								<tr>
 									<th>말머리</th>
 									<td><select name="field">
-											<option value="title">전체 글보기</option>
-											<option value="account">계정</option>
-											<option value="report">신고</option>
-											<option value="else">기타</option>
+											<option value="choice">말머리 선택</option>
+											<option value="dona">나눔</option>
+											<option value="boast">자랑</option>
+											<option value="share">정보 공유</option>
+											<option value="free">자유글</option>
 									</select></td>
 								</tr>
+								
 								<tr>
 									<th>작성자</th>
-									<td><input type="text" value="${Nick}" name="nick"
+									<td><input type="text" value="<%=nick %>" name="nick"
 										readonly></td>
 								</tr>
+								
 								<tr>
 									<th>글제목</th>
 									<td><input type="text" name="title"></td>
 								</tr>
+								
 								<tr>
 									<th>글내용</th>
 									<td><textarea rows="7" cols="25" name="cont"></textarea></td>
 								</tr>
+								
 								<tr>
-									<th>첨부파일</th>
+									<th>첨부 파일</th>
 									<td><input type="text" name="file"></td>
 								</tr>
+								
 							</table>
 							<div class="submit1">
 								<input class="submit_btn btn-primary" type="submit" value="글쓰기">
@@ -174,25 +195,25 @@
 		<nav>
 			<ul class="pagination">
 				<li class="page-item"><a class="page-link"
-					href="qna_list.so?page=1">First</a></li>
-				<li><a class="page-link" href="qna_list.so?page=${page - 1}">Previous</a>
+					href="board_list.io?page=1">First</a></li>
+				<li><a class="page-link" href="board_list.io?page=${page - 1}">Previous</a>
 				</li>
 				<c:forEach begin="${startBlock}" end="${endBlock}" var="i">
 					<c:if test="${i == page}">
 						<li class="page-item active" aria-current="page"><a
-							class="page-link" href="qna_list.so?page=${i}">${i}</a></li>
+							class="page-link" href="board_list.io?page=${i}">${i}</a></li>
 					</c:if>
 					<c:if test="${i != page}">
 						<li class="page-item"><a class="page-link"
-							href="qna_list.so?page=${i}">${i}</a></li>
+							href="board_list.io?page=${i}">${i}</a></li>
 					</c:if>
 				</c:forEach>
 				<c:if test="${endBlock < allPage}">
 					<li class="page-item"><a class="page-link"
-						href="qna_list.so?page=${page + 1}">Next</a></li>
+						href="board_list.io?page=${page + 1}">Next</a></li>
 				</c:if>
 				<li class="page-item"><a class="page-link"
-					href="qna_list.so?page=${allPage}">End</a></li>
+					href="board_list.io?page=${allPage}">End</a></li>
 			</ul>
 		</nav>
 
