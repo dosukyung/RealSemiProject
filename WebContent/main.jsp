@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.area {
+.area { 
     position: absolute;
     background: #fff;
     border: 1px solid #888;
@@ -4859,7 +4859,7 @@ function displayArea(area) {
         var content = '<div class="info">' + 
                     '   <div class="title">' + area.name + '</div>' + '<hr>' +
                     "   <a href='board_list.go?location="+area.name+"'>게시판</a>" + '<hr>' +
-                    '   <a>매칭</a>' +
+                    "   <a href='member_match.do?location="+area.name+"'>매칭</a>" +
                     '</div>';
 
         infowindow.setContent(content); 

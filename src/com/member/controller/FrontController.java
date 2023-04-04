@@ -52,6 +52,12 @@ public class FrontController extends HttpServlet {
 			action = new DeleteContent();
 		}else if(command.equals("delete.ok.do")) {
 			action = new DeleteOkContent();
+		}else if(command.equals("member_match.do")) {
+			action = new Match();
+		}else if(command.equals("findId.member.do")) {
+			action = new FindId();
+		}else if(command.equals("findPwd.member.do")) {
+			action = new FindPwd();
 		}
 		
 		

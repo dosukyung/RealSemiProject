@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -170,7 +171,7 @@ public class MemberDAO {
 				dto.setMember_animal1(rs.getInt("member_animal1"));
 				dto.setMember_animal2(rs.getInt("member_animal2"));
 				dto.setMember_animal3(rs.getInt("member_animal3"));
-				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_gender(rs.getString("member_gender"));
 				dto.setMember_email(rs.getString("member_email"));
 				dto.setMember_name(rs.getString("member_name"));
 				dto.setMember_nick(rs.getString("member_nick"));
@@ -208,7 +209,7 @@ public class MemberDAO {
 				dto.setMember_animal1(rs.getInt("member_animal1"));
 				dto.setMember_animal2(rs.getInt("member_animal2"));
 				dto.setMember_animal3(rs.getInt("member_animal3"));
-				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_gender(rs.getString("member_gender"));
 				dto.setMember_email(rs.getString("member_email"));
 				dto.setMember_name(rs.getString("member_name"));
 				dto.setMember_nick(rs.getString("member_nick"));
@@ -282,4 +283,123 @@ public class MemberDAO {
 		
 		return result;
 	}
+	
+	public ArrayList<MemberDTO> getListMatch(String location, int idNum){
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		try {
+			openConn();
+			sql = "select * from member where member_addr2 = ? and member_num != ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, location);
+			pstmt.setInt(2, idNum);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setMember_id(rs.getString("member_id"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_age(rs.getInt("member_age"));
+				dto.setMember_addr1(rs.getString("member_addr1"));
+				dto.setMember_addr2(rs.getString("member_addr2"));
+				dto.setMember_addr3(rs.getString("member_addr3"));
+				dto.setMember_animal1(rs.getInt("member_animal1"));
+				dto.setMember_animal2(rs.getInt("member_animal2"));
+				dto.setMember_animal3(rs.getInt("member_animal3"));
+				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_email(rs.getString("member_email"));
+				dto.setMember_name(rs.getString("member_name"));
+				dto.setMember_nick(rs.getString("member_nick"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_num(rs.getInt("member_num"));
+				dto.setMember_phone(rs.getString("member_phone"));
+				dto.setMember_self(rs.getString("member_self"));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public MemberDTO findId(String name, String phone) {
+		MemberDTO dto = null;
+		
+		try {
+			openConn();
+			sql = "select * from member where member_name = ? and member_phone = ?";			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, phone);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto = new MemberDTO();
+				dto.setMember_id(rs.getString("member_id"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_age(rs.getInt("member_age"));
+				dto.setMember_addr1(rs.getString("member_addr1"));
+				dto.setMember_addr2(rs.getString("member_addr2"));
+				dto.setMember_addr3(rs.getString("member_addr3"));
+				dto.setMember_animal1(rs.getInt("member_animal1"));
+				dto.setMember_animal2(rs.getInt("member_animal2"));
+				dto.setMember_animal3(rs.getInt("member_animal3"));
+				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_email(rs.getString("member_email"));
+				dto.setMember_name(rs.getString("member_name"));
+				dto.setMember_nick(rs.getString("member_nick"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_num(rs.getInt("member_num"));
+				dto.setMember_phone(rs.getString("member_phone"));
+				dto.setMember_self(rs.getString("member_self"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return dto;
+	}
+	
+	public MemberDTO findPwd(String name, String id, String email) {
+		MemberDTO dto = null;
+		
+		try {
+			openConn();
+			sql = "select * from member where member_name = ? and member_id = ? and member_email = ?";			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, id);
+			pstmt.setString(3, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto = new MemberDTO();
+				dto.setMember_id(rs.getString("member_id"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_age(rs.getInt("member_age"));
+				dto.setMember_addr1(rs.getString("member_addr1"));
+				dto.setMember_addr2(rs.getString("member_addr2"));
+				dto.setMember_addr3(rs.getString("member_addr3"));
+				dto.setMember_animal1(rs.getInt("member_animal1"));
+				dto.setMember_animal2(rs.getInt("member_animal2"));
+				dto.setMember_animal3(rs.getInt("member_animal3"));
+				dto.setMember_gender(rs.getString("member_age"));
+				dto.setMember_email(rs.getString("member_email"));
+				dto.setMember_name(rs.getString("member_name"));
+				dto.setMember_nick(rs.getString("member_nick"));
+				dto.setMember_pwd(rs.getString("member_pwd"));
+				dto.setMember_num(rs.getInt("member_num"));
+				dto.setMember_phone(rs.getString("member_phone"));
+				dto.setMember_self(rs.getString("member_self"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return dto;
+	}
+	
 }
