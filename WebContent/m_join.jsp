@@ -120,30 +120,30 @@ function check(){
 				<td><input type="text" name="addr1" value="서울시" readonly>
 					<br> <select name="addr2">
 						<option value="구">:::구 선택:::</option>
-						<option value="강남">강남</option>
-						<option value="강동">강동</option>
-						<option value="강북">강북</option>
-						<option value="강서">강서</option>
-						<option value="관악">관악</option>
-						<option value="광진">광진</option>
-						<option value="구로">구로</option>
-						<option value="금천">금천</option>
-						<option value="노원">노원</option>
-						<option value="도봉">도봉</option>
-						<option value="동대문">동대문</option>
-						<option value="동작">동작</option>
-						<option value="마포">마포</option>
-						<option value="서대문">서대문</option>
-						<option value="서초">서초</option>
-						<option value="성동">성동</option>
-						<option value="성북">성북</option>
-						<option value="양천">양천</option>
-						<option value="영등포">영등포</option>
-						<option value="용산">용산</option>
-						<option value="은평">은평</option>
-						<option value="종로">종로</option>
+						<option value="강남구">강남구</option>
+						<option value="강동구">강동구</option>
+						<option value="강북구">강북구</option>
+						<option value="강서구">강서구</option>
+						<option value="관악구">관악구</option>
+						<option value="광진구">광진구</option>
+						<option value="구로구">구로구</option>
+						<option value="금천구">금천구</option>
+						<option value="노원구">노원구</option>
+						<option value="도봉구">도봉구</option>
+						<option value="동대문구">동대문구</option>
+						<option value="동작구">동작구</option>
+						<option value="마포구">마포구</option>
+						<option value="서대문구">서대문구</option>
+						<option value="서초구">서초구</option>
+						<option value="성동구">성동구</option>
+						<option value="성북구">성북구</option>
+						<option value="양천구">양천구</option>
+						<option value="영등포구">영등포구</option>
+						<option value="용산구">용산구</option>
+						<option value="은평구">은평구</option>
+						<option value="종로구">종로구</option>
 						<option value="중구">중구</option>
-						<option value="중랑">중랑</option>
+						<option value="중랑구">중랑구</option>
 				</select> <input type="text" name="addr3" placeholder="상세 주소"></td>
 
 			</tr>
