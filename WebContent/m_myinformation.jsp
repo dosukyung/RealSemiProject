@@ -70,6 +70,22 @@
 					<td> ${Animal3}</td>
 				</c:if>
 			</tr>
+			
+			<tr>
+				<td colspan="2" align="center">
+					<a href ="fri_list.to?id=<%=(String)session.getAttribute("UserId")%>">
+						<button>친구목록</button>
+					</a>
+					
+				<a href ="fri_add.to?id=<%=(String)session.getAttribute("UserId")%>">
+						<button>친구추가</button>						
+					</a>
+					
+				<a href ="fri_acc.to?id=<%=(String)session.getAttribute("UserId")%>">
+						<button>친구수락</button>						
+					</a>
+				</td>
+			</tr>
 		</table>
 		<br>
 		
