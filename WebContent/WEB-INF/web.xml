@@ -22,7 +22,11 @@
 	<servlet-name>AFrontController</servlet-name>
 	<servlet-class>com.animal.controller.AFrontController</servlet-class>
 </servlet>
-
+ <servlet>
+	<servlet-name>FFrontController</servlet-name>
+	<servlet-class>com.fri.controller.FFrontController</servlet-class>
+</servlet>
+  
   
 <servlet-mapping>
 	<servlet-name>FrontController</servlet-name>
@@ -36,4 +40,11 @@
 	<servlet-name>AFrontController</servlet-name>
 	<url-pattern>*.no</url-pattern>
 </servlet-mapping>  
+
+
+<servlet-mapping>
+	<servlet-name>FFrontController</servlet-name>
+	<url-pattern>*.to</url-pattern>
+</servlet-mapping>
+
 </web-app>
