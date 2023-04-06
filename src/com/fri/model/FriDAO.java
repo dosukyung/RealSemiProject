@@ -100,9 +100,7 @@ public class FriDAO {
 
 			openConn();
 			sql ="select * from friend where friend_response = ? and request_wait = '1'";
-			
-	
-			
+
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, mnum);
 			rs= pstmt.executeQuery();
@@ -248,7 +246,7 @@ public class FriDAO {
 	// 만약 친구신청 상태이거나 친구인 상태면 1을 반환하고,
 	// 친구신청을 보낼 수 있는 상태면 0을 반환
 	public int fri_checkfriend(int lno,int fno) {
-		int result = 0;
+		int result = 0, count = 0;
 		try {
 			openConn();
 			sql ="select count(*) from friend where friend_request = ? and friend_response = ? and (request_wait = '1' or request_accept = '1')";
@@ -273,6 +271,23 @@ public class FriDAO {
 				if(result == 1) {
 					return result;
 				}
+			}
+			
+			sql = "select max(friend_num) from friend";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1) + 1;
+			}
+			
+			sql = "insert into friend values(?,?,?,'1','0')";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, count);
+			pstmt.setInt(2, lno);
+			pstmt.setInt(3, fno);
+			result = pstmt.executeUpdate();
+			if(result == 1) {
+				result = 0;
 			}
 		
 		} catch (Exception e) {

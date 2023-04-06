@@ -35,7 +35,7 @@
 				${List.get(0).getMember_name()} 님의 첫번째 애완동물 : ${List.get(0).getMember_animal1() } <br>
 				회원 주소 : ${List.get(0).getMember_addr1() } ${List.get(0).getMember_addr2() }<br><br>
 				
-				<button onclick="#">친구신청</button>
+				<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(0).getMember_num()}'">친구신청</button>
 			</td>
 		</tr>
 	</table>
@@ -54,7 +54,7 @@
 				${List.get(1).getMember_name()} 님의 첫번째 애완동물 : ${List.get(1).getMember_animal1() } <br>
 				회원 주소 : ${List.get(1).getMember_addr1() } ${List.get(1).getMember_addr2() }<br><br>
 				
-				<button onclick="#">친구신청</button>
+				<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(1).getMember_num()}'">친구신청</button>
 			</td>
 		</tr>
 	</table>
@@ -73,7 +73,7 @@
 				${List.get(2).getMember_name()} 님의 첫번째 애완동물 : ${List.get(2).getMember_animal1() } <br>
 				회원 주소 : ${List.get(2).getMember_addr1() } ${List.get(2).getMember_addr2() }<br><br>
 				
-				<button onclick="#">친구신청</button>
+				<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(2).getMember_num()}'">친구신청</button>
 			</td>
 		</tr>
 	</table>

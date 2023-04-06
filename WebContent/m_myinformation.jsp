@@ -74,15 +74,11 @@
 			<tr>
 				<td colspan="2" align="center">
 					<a href ="fri_list.to?id=<%=(String)session.getAttribute("UserId")%>">
-						<button>친구목록</button>
-					</a>
-					
-				<a href ="fri_add.to?id=<%=(String)session.getAttribute("UserId")%>">
-						<button>친구추가</button>						
+						<button>친구 목록</button>
 					</a>
 					
 				<a href ="fri_acc.to?id=<%=(String)session.getAttribute("UserId")%>">
-						<button>친구수락</button>						
+						<button>친구 수락 요청 </button>						
 					</a>
 				</td>
 			</tr>
@@ -92,9 +88,11 @@
 		
 		
 	<%} %>
-	 <button onclick="location.href='modify.member.do?no=${Dto.getMember_num()}'">회원정보수정</button>
-	 <button onclick="location.href='delete.do?no=${Dto.getMember_num()}'">회원정보삭제</button>
-	 <button onclick="location.href='AniamlInsert.no?no=${Dto.getMember_num()}'">동물 등록하기</button>
+	<div align="center">
+		 <button onclick="location.href='modify.member.do?no=${Dto.getMember_num()}'">회원정보수정</button>
+		 <button onclick="location.href='delete.do?no=${Dto.getMember_num()}'">회원정보삭제</button>
+		 <button onclick="location.href='AniamlInsert.no?no=${Dto.getMember_num()}'">동물 등록하기</button>
+	 </div>
 	<%@include file="/footer.jsp" %>
 	
 </body>
