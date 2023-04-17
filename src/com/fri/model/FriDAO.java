@@ -342,4 +342,61 @@ public class FriDAO {
 			}
 			return result;
 	}
+	
+	public List<MesDTO> getMessage(int my, int fri) {
+			List<MesDTO> list = new ArrayList<MesDTO>();
+		try {
+			openConn();
+			sql = "select * from message where (message_request = ? and message_response = ?) or (message_request = ? and message_response = ?) order by message_num";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, fri);
+			pstmt.setInt(2, my);
+			pstmt.setInt(3, my);
+			pstmt.setInt(4, fri);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MesDTO dto = new MesDTO();
+				dto.setMessage_content(rs.getString("message_content"));
+				dto.setMessage_num(rs.getInt("message_num"));
+				dto.setMessage_request(rs.getInt("message_request"));
+				dto.setMessage_response(rs.getInt("message_response"));
+				list.add(dto);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return list;
+	}
+	
+	public void insertMessage(int my, int fri, String message) {
+		int count = 0;
+		try {
+			openConn();
+			sql = "select count(*) from message";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+			sql = "insert into message values(?, ?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, count + 1);
+			pstmt.setInt(2, my);
+			pstmt.setInt(3, fri);
+			pstmt.setString(4, message);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+	}
 }
