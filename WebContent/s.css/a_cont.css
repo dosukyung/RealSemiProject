@@ -1,0 +1,49 @@
+@charset "UTF-8";
+body{
+	max-height: 1000px;
+	max-width: 100%;
+}
+#container{
+	max-width:850px;
+	height:700px;
+	margin:0px auto;
+}
+.card{
+	margin: auto 0px;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius:10px; 
+	width: 800px;
+}
+#table{
+	text-align: center;
+	height:400px;
+	width:300px;
+	float:right;
+	border:none;
+	border-collapse:collapse;
+	border-spacing: 0px;
+	
+}
+#table td,th{
+	border-bottom: 1px solid black;
+	height:50px;
+}
+#table th{
+	width:20%;	
+}
+#table td{
+	text-align: left;
+}
+
+img{
+	max-width: 400px;
+	height: 400px;
+	transform: translate(10%, 0%);
+}
+#container button{
+	padding: 10px 20px;
+	float: right;
+	margin-right: 5%;
+	margin-top: 5%;
+	}

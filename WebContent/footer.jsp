@@ -5,11 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="s.css/footer">
 </head>
 <body>
+<footer id="footer">
 	<hr>
 	Foot 부분
-	<br> KH정보아카데미
+	<br> 
+	KH정보아카데미
+</footer>
 
 </body>
 </html>

@@ -5,16 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="s.css/find_id_pwd.css">
 </head>
 <body>
-<%@include file="header.jsp"%>
-	<form method="post" action="findPwd.member.do">
-	
-			이름 : <input type="text" name="name"> <br>
-			id : <input type="text" name="id"> <br>
-			이메일 : <input type="text" name="email"> <br>
-			<button type="submit">비밀번호 찾기</button>
-	</form>
+	<h2>펫만나</h2>
+		<form method="post" action="findPwd.member.do">
+		
+				이   름 : <input type="text" name="name"> 
+				<br>
+				아이디 : <input type="text" name="id"> 
+				<br>
+				이메일 : <input type="text" name="email"> 
+				<br>
+				<div class="fun">
+					<button type="submit">비밀번호 찾기</button>
+					<img alt="슬퍼요" src="s.image/lol_to.png">
+				</div>
+		</form>
 <%@include file="footer.jsp"%>
 </body>
 </html>

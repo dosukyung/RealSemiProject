@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel ="stylesheet" href="s.css/head.css">
 </head>
 <body>
-	<a href="main.jsp"> 메인페이지</a>
+	<header id="head">
+	
+	<a href="main.jsp" class="mainpage"> 메인페이지</a>
 	<% 
 		if(session.getAttribute("UserId") == null){
 	%>
@@ -15,8 +18,7 @@
 	<% 
 		}else{
 	%>
-	<a
-		href="content.member.do?id=<%=(String)session.getAttribute("UserId")%>">내
+	<a href="content.member.do?id=<%=(String)session.getAttribute("UserId")%>">내
 		정보</a>
 
 	<%	
@@ -39,8 +41,7 @@
 		
 	%>
 
-
-
-	<hr>
+	
+	</header>
 </body>
 </html>

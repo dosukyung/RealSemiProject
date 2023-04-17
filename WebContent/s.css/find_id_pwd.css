@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+form{
+   /*  background-image: url('s.image/lol_to.png');
+    background-size: cover; */
+    padding:0;
+    margin:0;
+    height: 100%;
+	max-height: 450px;
+	max-width: 400px;
+	text-align: center;
+	align-content: center;
+}
+/* .fun{
+	margin: 40px 0;
+	position: relative;
+}
+
+.fun img{
+	width: 100%;
+	height:100%;
+	display: none;
+ 	position: absolute;
+	z-index: 0;
+	opacity: 0;
+}
+
+.fun button{
+	width: 100%;
+	height:100%;
+ 	position: absolute;
+	z-index: 2;
+	padding: 15px 50px;
+	background-color: blue;
+	border-radius: 10px;
+	border: none;
+}
+.fun button:hover + .fun img {
+opacity: 1;
+}
+
+button:hover {
+  display: none;
+}
+ */
+ 
+ .fun {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  align-content: center;
+  margin: 40px 0 40px 30%;  
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  border-radius: 10px;
+  border: none;
+  background-color:red;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+	left: 33%;
+}
+
+
+button:hover {
+  opacity: 0;
+}
+
+
+button:hover + img {
+  opacity: 1;
+}
+
+
+input {
+border: none;
+border-bottom:1px solid black;
+height: 50px; 
+width:80%;
+}
+h2{
+	text-align: center;
+}

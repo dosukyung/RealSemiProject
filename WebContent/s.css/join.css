@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+}
+.boby{
+	 height: 100%;
+  width:100%;
+  background: url("../s.image/Nyan Cat.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.container{
+	max-width: 1500px;
+	margin: 0 auto;
+	max-height:1000px;
+	min-height: 830px;
+}
+
+.join{
+	border:none;
+/* 	align-content: center;
+ */
+ background-color:rgba(255,255,255, 0.3);
+ 	float:right;
+ 	max-width:600px;
+	max-height:750px;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+	margin-right: 5%;
+	margin-top:5%;
+	min-height: 690px;
+}
+.join td{
+	 max-height:650px;
+/* 	border-color: #B2CCFF;
+	border-bottom: 2px solid black;
+ */	
+}
+.join span{
+	text-align: left;
+	font-size: 13px;
+}
+
+.join input{
+	text-align:center;
+	align-content: center;
+	text-align: center;
+	width: 70%;
+	border:none;
+	border-bottom:1px solid black;
+	background: transparent;
+	
+}
+
+
+#subm{
+	border-bottom:none;
+}
+#but{
+	border:1px solid black;
+	display:inline;
+	background: transparent;
+	text-align:center;
+	margin: 0 auto;
+	align-content:center;
+}
+#but:hover {
+	background-color: white;	
+	color: black;
+	border: 1px solid black;
+}
+
+#m_sub{
+	width: 25%;
+	border: 1px solid black;
+}
+
+#m_sub:hover {
+	background-color:rgba(0,0,0,0.5);	
+	color: black;
+	border: 1px solid black;
+}
