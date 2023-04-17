@@ -34,7 +34,7 @@
 								<td>${dto.getMember_id()}</td>
 								<td>${dto.getMember_nick()}</td>
 								<td>${dto.getMember_gender()}</td>
-								<td><a href="#"><img src="s.image/communication.png"
+								<td><a href="<%=request.getContextPath() %>/fri_message.to?no=${dto.getMember_num()}">"><img src="s.image/communication.png"
 										class="ima"></a></td>
 								<td><a
 									href="<%=request.getContextPath()%>/fri_delete.to?no=${dto.getMember_num()}">

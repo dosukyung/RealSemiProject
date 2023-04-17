@@ -49,7 +49,6 @@ public class FFrontController extends HttpServlet {
 		}else if(command.equals("fri_ok_add.to")) { 
 			action= new FriAddOkAction(); //친구 추가 로직
 			action.execute(request, response); 
-				
 		}else if(command.equals("fri_acc.to")) { 
 			action= new FriAccAction(); //친구 폼 페이지
 			action.execute(request, response); 
@@ -60,8 +59,15 @@ public class FFrontController extends HttpServlet {
 		}else if(command.equals("fri_delete.to")) {
 			action = new FriDeleteAction();
 			action.execute(request, response);
-			
+		}else if(command.equals("fri_message.to")) {
+			action = new FriMessageAction();
+			action.execute(request, response);
+			viewPage = "fri_message.jsp";
+		}else if(command.equals("fri_insertMessage.to")) {
+			action = new FriInsertMessage();
+			action.execute(request, response);
 		}
+		 
 		
 		
 		

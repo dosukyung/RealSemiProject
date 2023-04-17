@@ -18,6 +18,6 @@
 		</th>
 	</table>
 </div>
-
+<%@inclue file="footer.jsp" %>
 </body>
 </html>
