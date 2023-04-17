@@ -1,0 +1,73 @@
+@charset "UTF-8";
+include{
+	height:100px;
+}
+
+.container{
+		margin:0 auto;
+		max-width:100%;
+		min-width:500px;
+		height: 800px;
+		background-image:url("../s.image/fri_list_back_2.jpg");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		align-content: center;
+		background-position: center;
+}
+
+
+#tion{
+margin-top:7%;
+	/* box-sizing: border-box; */
+		max-width:800px;
+		min-width: 300px;
+  border-collapse: collapse; /* 테이블 셀 경계선을 병합하기 위해 사용 */
+  border-spacing: 0; /* 셀 경계선 간격을 0으로 설정 */
+  text-align: center;
+ }
+
+#tion th,td{
+	max-width:100px;
+	min-width:30px;
+	margin: 100px;
+}
+#tion th{
+	
+	background-color: #B2CCFF;
+	color:white;
+	margin-top: 10%;
+}
+#tion td{
+	text-align: center;
+ 	color:#7f5d34;
+   	border: none;
+  	border-top: 1px solid black;
+  	border-bottom: 1px solid black;
+}
+
+#tion td:first-child {
+  border-left: 1px solid black;
+}
+
+#tion td:last-child {
+  border-right: 1px solid black;
+}
+#non{
+	border: none;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	
+}
+.ima{
+	max-width: 25px;
+	max-height: 25px;
+  position: relative;
+  top: 90%;
+  left: -30%;
+
+  transform: translate(-50%)
+
+}

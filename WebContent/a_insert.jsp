@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="s.css/a_insert.css">
 </head>
 <body>
 
@@ -13,18 +14,18 @@
 	<%@include file="header.jsp" %>
 
 	
-	
-	<table border="1" cellspacing="0">
-		<tr>
-			<th> 첫번째 반려동물 </th>
+	<div align="center" class="container">
+	<table class="my_ani">
+		<tr class="a_th">
+			<th > 첫째</th>
 			<td>${Animal1.getAnimal_name()}</td>
 		</tr>
-		<tr>
-			<th> 두번째 반려동물 </th>
+		<tr class="a_th">
+			<th> 둘쨰 </th>
 			<td>${Animal2.getAnimal_name()}</td>
 		</tr>
-		<tr>
-			<th> 세번째 반려동물 </th>
+		<tr class="a_th">
+			<th > 셋째 </th>
 			<td>${Animal3.getAnimal_name()}</td>
 		</tr>
 	</table>
@@ -36,37 +37,37 @@
 	</c:if>
 	
 	<c:if test="${(Animal1 == null and Animal2 == null and Animal3 == null) or (Animal1 != null and Animal2 == null and Animal3 == null) or (Animal1 != null and Animal2 != null and Animal3 == null)}">
-		<form method="post" action="AniamlInsertOk.no" enctype="multipart/form-data">
+		<form method="post" action="AniamlInsertOk.no" enctype="multipart/form-data" class="join">
 		
 		
-			<table border="1" cellspacing="0">
+			<table class="join">
 				<tr>
-					<th> 애완동물 이름 </th>
+					<th> 이름 </th>
 					<td> <input name="name">  </td>
 				</tr>
 				<tr>
-					<th> 애완동물 나이</th>
+					<th> 나이</th>
 					<td> <input name="age">  </td>
 				</tr>
-				<tr>
-					<th> 애완동물 성별 </th>
+				<tr class="choice">
+					<th> 성별 </th>
 					<td> 
-						수컷 <input type="radio" value="1" name="gender">
-						암컷 <input type="radio" value="2" name="gender">				
+						수컷 <input type="radio" value="1" name="gender" >
+						암컷 <input type="radio" value="2" name="gender" >				
 					</td>
 				</tr>
-				<tr>
-					<th> 애완동물 종류</th>
+				<tr class="choice">
+					<th> 종류 </th>
 					<td> 
 						강아지 <input type="radio" value="1" name="type">
-						고양이 <input type="radio" value="2" name="type">	  
+						고양이 <input type="radio" value="2" name="type" >	  
 					</td>
 				</tr>
 				<tr>
-					<th> 애완동물 종</th>
+					<th> 품종</th>
 					<td> <input name="race">  </td>
 				</tr>
-				<tr>
+				<tr class= "po">
 				    <th>사진</th>
 				    <td>
 				        <input type="file" name="image" onchange="previewImage(event)">
@@ -77,26 +78,25 @@
 			</table>
 			
 			<c:if test="${Animal1 == null and Animal2 == null and Animal3 == null}">
-				<h3>  아직 등록된 애완동물이 없습니다. 첫번째 애완동물을 등록해보세요^^</h3>
+				<h3>  아직 등록된 아이가 없습니다. 첫번째 애완동물을 등록해보세요^^</h3>
 				<input type="hidden" name="have" value ="1">
 			</c:if>
 			
 			<c:if test="${Animal1 != null and Animal2 == null and Animal3 == null}">
-				<h3>  애완동물을 2마리 더 등록하실 수 있습니다.</h3>
+				<h3>  아이를 더 등록하실 수 있습니다.</h3>
 				<input type="hidden" name="have" value ="2">
 			</c:if>
 			
 			<c:if test="${Animal1 != null and Animal2 != null and Animal3 == null}">
-				<h3>  애완동물을 1마리 더 등록하실 수 있습니다.</h3>
+				<h3>  아이를 더 등록하실 수 있습니다.</h3>
 				<input type="hidden" name="have" value ="3">
 			</c:if>
 			
-			<input type="submit" value="등록하기">
+			<input type="submit" value="등록하기" id="sub">
 		</form>
 	</c:if>
 	
-	
-	
+	</div>
 	
 	<%@include file="footer.jsp" %>
 <script>

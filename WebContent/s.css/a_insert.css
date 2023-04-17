@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+}
+.boby{
+	 height: 100%;
+  width:100%;
+/*   background: url("../s.image/Nyan Cat.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+}
+.container{
+	max-width: 1500px;
+	margin: 0 auto;
+	max-height:1200px;
+	align-content: center;
+}
+.my_ani{
+	max-width: 100px;
+	max-height:100px;
+}
+.my_ani th,td{
+	border-bottom: 1px solid black;
+}
+.join{
+
+ 	max-width:60%;
+	max-height:900px;
+	border-collapse: separate;
+	border-spacing: 0 0;
+ border: none;
+ background-color: rgba(255,255,255,0.3);
+}
+.join th td{
+	height:140px;
+	border:none;
+}
+
+.join span{
+	text-align: left;
+	font-size: 13px;
+}
+
+.join input{
+	border:none;
+	text-align:center;
+	align-content: center;
+	text-align: center;
+	width: 100%;
+	background: transparent;
+}
+
+.choice {
+	text-align:center;
+	height:70px;
+}
+
+.choice input{
+	width:20%;
+}
+.po{
+	height:70px;
+}
+/* #subm{
+	border-bottom:none;
+}
+#but{
+	border:1px solid black;
+	display:inline;
+	background: transparent;
+	text-align:center;
+	margin: 0 auto;
+	align-content:center;
+}
+#but:hover {
+	background-color: white;	
+	color: black;
+	border: 1px solid black;
+} */
+
+#sub{
+	width: 25%;
+	border: 1px solid black;
+}
+
+#sub:hover {
+	background-color:rgba(0,0,0,0.5);	
+	color: black;
+	border: 1px solid black;
+}

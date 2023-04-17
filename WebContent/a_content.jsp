@@ -7,47 +7,53 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="s.css/a_cont.css">
+
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<table border="1" cellspacing="0">
-		<tr>
-			<th> 애완동물 이름 </th>
-			<td> ${dto.getAnimal_name()}</td>
-		</tr>
-		<tr>
-			<th> 애완동물 나이 </th>
-			<td> ${dto.getAnimal_age()}</td>
-		</tr>
-		<tr>
-			<th> 애완동물 품종 </th>
-			<td> ${dto.getAnimal_race()}</td>
-		</tr>
-		<tr>
-			<th> 애완동물 성별 </th>
-			<c:if test="${dto.getAnimal_gender() eq '1'}">
-				<td>수컷</td>
-			</c:if>
-			<c:if test="${dto.getAnimal_gender() eq '2'}">
-				<td>암컷</td>
-			</c:if>
-		</tr>
-		<tr>
-			<th> 애완동물 종류 </th>
-			<c:if test="${dto.getAnimal_type() eq '1'}">
-				<td>강아지</td>
-			</c:if>
-			<c:if test="${dto.getAnimal_type() eq '2'}">
-				<td>고양이</td>
-			</c:if>
-		</tr>
-		<tr>
-			<td> 사진 </td>
-			<td> <img src="animal/${dto.getAnimal_image()}">	</td>
-		</tr>
-	</table>
-	<button onclick="location.href='DeleteAnimal.no?no=${dto.getAnimal_num()}'">애완동물삭제</button>
 	
-	<%@include file="footer.jsp" %>
+<div id="container">
+	<div class="card">
+		<h3>민증</h3>
+		<table id="table">
+			<tr>
+				<th> 이름 </th>
+				<td> ${dto.getAnimal_name()}</td>
+			</tr>
+			<tr>
+				<th> 나이 </th>
+				<td> ${dto.getAnimal_age()}</td>
+			</tr>
+			<tr>
+				<th> 품종 </th>
+				<td> ${dto.getAnimal_race()}</td>
+			</tr>
+			<tr>
+				<th> 성별 </th>
+				<c:if test="${dto.getAnimal_gender() eq '1'}">
+					<td>수컷</td>
+				</c:if>
+				<c:if test="${dto.getAnimal_gender() eq '2'}">
+					<td>암컷</td>
+				</c:if>
+			</tr>	
+			<tr>
+				<th> 종류 </th>
+				<c:if test="${dto.getAnimal_type() eq '1'}">
+					<td>강아지</td>
+				</c:if>
+				<c:if test="${dto.getAnimal_type() eq '2'}">
+					<td>고양이</td>
+				</c:if>
+			</tr>
+		</table>
+			<div class="img">
+				<img src="animal/${dto.getAnimal_image()}">
+			</div>
+	</div>
+	<button onclick="location.href='DeleteAnimal.no?no=${dto.getAnimal_num()}'">삭 제</button>
+</div>	
+	<%@include file="footer.jsp" %>	
 </body>
 </html>
