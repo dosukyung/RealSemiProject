@@ -21,7 +21,7 @@ h1{
 .table_container{
 	float:left;
 	margin-right: 10%;
-	border-right: 3px solid #b19780;
+	border-right: 1px solid #8a704f;
 	margin-left: 23%;
  	padding-right: 10%;
 }
@@ -40,12 +40,12 @@ margin-top:10%;
 /* 	color:#f6a7c0;
 	border: 1px solid #f6a7c0;
  */	border-radius: 10px;
-	border: 3px solid #b19780;
- 	color:#7f5d34;
+	border: 1px solid #8a704f;
+ 	color: #8a704f;
 }
 #tion th{
 	border-radius: 10px;
-	background-color: #B2CCFF;
+	background-color: #8a704f;
 	color:white;
 	margin-top: 10%;
 }
@@ -55,7 +55,7 @@ margin-top:10%;
 }
 
 button{
-	background-color: #B2CCFF;
+	background-color: #8a704f;
 	color:white;
 	border:none;
 	border-radius: 8px;
@@ -70,10 +70,7 @@ button{
 	vertical-align: middle;
 	/* transform: translate(0%, 0%); */
 }
-.buts a{
-	margin-right: 45%;
-	
-}
+
 #button{ 
 /* 	padding-right:5%; */
   display: flex;

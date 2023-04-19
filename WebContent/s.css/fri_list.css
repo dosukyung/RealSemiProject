@@ -64,10 +64,11 @@ a{
 .ima{
 	max-width: 25px;
 	max-height: 25px;
-  position: relative;
+  /* position: relative;
   top: 90%;
   left: -30%;
 
-  transform: translate(-50%)
+  transform: translate(-50%) */
+  align-content: center;
 
 }
