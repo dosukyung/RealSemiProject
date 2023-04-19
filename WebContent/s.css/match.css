@@ -1,22 +1,32 @@
 @charset "UTF-8";
 body{
 	height: 100%;
+	width: 100%;
 }
 .container{
+	background: url("../s.image/su_nback2.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	align-content: center;
 	height: 1000px;
-	max-width: 1200px;
+	max-width: 100%;
+	min-width:1350px;
 	margin: 0 auto;
+	overflow: hidden;
 }
+
 .match_table{
+	margin-top:6%;
 	float: left;
 	width: 25%;
-	margin-left: 4%;
-	margin-right: 4%;
+	margin-left:15%;
 	max-height: 600px;
+	max-width:250px;
 	border: none;
 }
-/* .match_table img{
-} */
+
 .match_table th{
 	height:200px;
 	width:200px;
@@ -34,27 +44,18 @@ img{
 	text-align:center;
 	height:350px;
 	border: 1px solid black;
+	border-radius: 10px;
 }
 
 .match_table button{
-     background:url("../s.image/bono.png") no-repeat, linear-gradient(
-        45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
-    );
+     background:url("../s.image/onlylogo.png") no-repeat center center;
 	background-size:auto 100%;
 	width: 80%;
 	margin-left:10%;
 	margin-right:10%;
 	padding: 20px;
-    color: red;
+	border-radius: 20px;
+	cursor: pointer;
 }
 
 

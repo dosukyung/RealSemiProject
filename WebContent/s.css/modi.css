@@ -2,7 +2,7 @@
 html{
   height: 100%;
   width:100%;
-  background: url("../s.image/cat.png") no-repeat center center fixed; 
+  background: url("../s.image/su_nback.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,30 +15,31 @@ html{
 	margin: 0 auto;
 	max-height:900px;
 	height:100%;
+	align-content: center;
+	
 /* 	background-image: url("../s.image/cat.png");
 	background-size: contain; 
 	 background-repeat: no-repeat;
-	*/
+*/
 	}
 
 .join{
-border: none;
+	margin: 0 auto;
+	border: none;
 	text-align:center;
 	align-content: center;
 	max-width:400px;
 	height:600px;
-
 }
 th,td{
-	
+
 	border-radius:10px;		
 	 border-width: 0 1px 1px 0;
-	border: 1px solid #B2CCFF;
-	border-color: #B2CCFF;
+	border: 1px solid #7d6b5b;
 }
 
 td{
-	border: 1px solid #FFD9FA;
+	border: 1px solid #7d6b5b;
 }
 /* #w{
 	border-top-left-radius:10px;
@@ -48,9 +49,9 @@ td{
 }*/
 .join input{
 	align-content: center;
-	border: none;
 	text-align: center;
-	 border-bottom: 2px solid #FFD9FA;
+	border: none;
+	 background: transparent;
 	
 }
 #check{
@@ -58,13 +59,14 @@ td{
 	color: white;
 	
 }
-#check:hover {
+button:hover {
 	color: black;
+	
 	
 }
 
 .join th{
-	background-color: #B2CCFF;	
+	background-color: #7d6b5b;	
 	color: white;
 	
 
@@ -74,7 +76,7 @@ td{
 }
 button {
 	border: none;
-	background-color:  #B2CCFF;
+	background-color:  #7d6b5b;
 	color: white;
 	padding: 10px 25px;
 }

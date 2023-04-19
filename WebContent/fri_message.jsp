@@ -26,9 +26,9 @@
         overflow: auto;
         margin: 10px;
         padding: 10px;
-        background-color: #fff;
         border-radius: 20px;
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);\
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        background-color:rgb(186, 206, 224);
     }
 
     /* style for the sender name */
@@ -44,6 +44,7 @@
         border-radius: 20px;
         font-size: 14px;
         max-width: 70%;
+        background-color: rgb(255, 235, 51);
     }
 
     /* style for messages sent by me */
@@ -64,7 +65,7 @@
     /* style for messages sent by other users */
     .sent-by-others {
     align-self: flex-start;
-    background-color: #F7F7F7;
+    background-color: rgb(255, 235, 51);
     color: #000;
     margin-bottom: 10px;
     margin-right: auto;
@@ -82,7 +83,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #4C4C4C;
+    background-color:rgb(186, 206, 224);
     color: #fff;
     border-radius: 20px 20px 0 0;
 }
@@ -93,6 +94,7 @@
     font-size: 18px;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
+    color: black;
 }
 
     /* style for the back button */
@@ -132,15 +134,17 @@
 
 /* style for the send button */
 .send-button {
-    background-color: #4C4C4C;
-    color: #fff;
+    background-color: rgb(255, 235, 51);
+    color: black;
     border: none;
     outline: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 </style>
 

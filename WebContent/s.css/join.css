@@ -4,35 +4,35 @@ html, body {
   height: 100%;
 }
 .boby{
-	 height: 100%;
+		height: 100%;
   width:100%;
-  background: url("../s.image/Nyan Cat.gif") no-repeat center center fixed; 
+/*   background:url("../s.image/su_nback.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+ */
+   background-color:rgb(249, 246, 239); 
 }
 .container{
 	max-width: 1500px;
 	margin: 0 auto;
 	max-height:1000px;
-	min-height: 830px;
+	min-height: 850px;
 }
 
 .join{
 	border:none;
 /* 	align-content: center;
  */
- background-color:rgba(255,255,255, 0.3);
- 	float:right;
+ background-color:rgba(255,255,255, 0);
+	align-content:center;
  	max-width:600px;
 	max-height:750px;
 	border-collapse: separate;
 	border-spacing: 0 10px;
-	margin-right: 5%;
 	margin-top:5%;
-	min-height: 690px;
+	min-height: 720px;
 }
 .join td{
 	 max-height:650px;
@@ -55,7 +55,14 @@ html, body {
 	background: transparent;
 	
 }
-
+.gender{
+	text-align: center;
+	align-content: center;
+}
+.gender > input{
+	align-content:center;
+	width: 30%;
+}
 
 #subm{
 	border-bottom:none;
@@ -66,7 +73,8 @@ html, body {
 	background: transparent;
 	text-align:center;
 	margin: 0 auto;
-	align-content:center;
+	align-content:center;	
+	margin-left:40%;
 }
 #but:hover {
 	background-color: white;	

@@ -11,6 +11,7 @@ background-image:url("../s.image/back1_1.png");
 		height: 1000px;
 /* 	  background-color: rgba( 255, 255, 255, 0.3 );
  */	  background-size: cover;
+ overflow: hidden;
 }
 h1{
 	float:left;
@@ -70,10 +71,7 @@ button{
 	vertical-align: middle;
 	/* transform: translate(0%, 0%); */
 }
-.buts a{
-	margin-right: 45%;
-	
-}
+
 #button{ 
 /* 	padding-right:5%; */
   display: flex;
@@ -82,6 +80,7 @@ button{
   margin-left: 7%;
   margin-top: 10%;
   margin-right: 25%;
+  min-height: 500px;
 /*   justify-content: flex-end; */
 }
 
