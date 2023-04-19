@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.MapBoard.model.MapBoardDAO;
 import com.MapBoard.model.MapBoardDTO;
+import com.member.model.MemberDAO;
 
 @WebServlet("/board_list.go")
 public class MapBoardList extends HttpServlet {
@@ -28,7 +29,7 @@ public class MapBoardList extends HttpServlet {
 		System.out.println("location >>> " + location);
 
 		// 웹페이지당 보여질 게시물의 수
-		int rowsize = 5;
+		int rowsize = 15;
 		
 		// 아래에 보여질 페이지 최대 블럭 수
 		int block = 5;
@@ -62,9 +63,9 @@ public class MapBoardList extends HttpServlet {
 		int endBlock = (((page-1) /block)*block) + block;
 		
 		MapBoardDAO dao = MapBoardDAO.getInstance();
-		
+		MemberDAO mdao = MemberDAO.getInstance();
 		// 전체 게시물의 수를 확인하는 메서드 호출
-		totalRecord = dao.getMapBoardCount();
+		totalRecord = dao.getMapBoardCount(location);
 		
 		// 전체 게시물의 수를 한 페이지당 보여질 게시물의 수로 나누어 주어야 함.
 		// 이 과정을 거치면 전체 페이지 수가 나오게 됨.
@@ -76,9 +77,12 @@ public class MapBoardList extends HttpServlet {
 		}
 		
 		// 현재 페이지에 해당하는 게시물을 가져오는 메서드 호출
-		List<MapBoardDTO> pageList = dao.getMapBoardList(page, rowsize);
+		List<MapBoardDTO> pageList = dao.getMapBoardList(page, rowsize, location);
 		
-		
+		for(MapBoardDTO dto : pageList) {
+			 dto.setNick((mdao.contentByNum(dto.getBoard_writer())).getMember_nick());
+		}
+	
 		// 지금까지 페이징 처리 시 작업했던 모든 데이터들을 view page로 이동을 시키자.
 		request.setAttribute("page", page);
 		request.setAttribute("rowsize", rowsize);

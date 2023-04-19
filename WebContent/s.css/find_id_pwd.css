@@ -61,19 +61,17 @@ button {
   z-index: 1;
   border-radius: 10px;
   border: none;
-  background-color:red;
+  background-color: #8a704f;
+  color: #fff;
 }
 
 img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
-  height: 100px;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-	left: 33%;
 }
 
 

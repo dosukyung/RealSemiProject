@@ -87,16 +87,16 @@ public class MapBoardDAO {
 	}	// closeConn() 메서드 end
 	
 	// MapBoard 테이블의 전체 게시물의 수를 확인하는 메서드.
-	public int getMapBoardCount() {
+	public int getMapBoardCount(String location) {
 		int count = 0;
 		
 		try {
 			openConn();
 			
-			sql = "select count(*) from map_board";
+			sql = "select count(*) from map_board where board_area = ? ";
 			
 			ps = con.prepareStatement(sql);
-			
+			ps.setString(1, location);
 			rs = ps.executeQuery();
 			
 			if(rs.next()) {
@@ -111,7 +111,7 @@ public class MapBoardDAO {
 	} // getMapBoardCount() 메서드 end
 	
 	// MapBoard 테이블에서 현재 페이지에 해당하는 게시물을 조회하는 메서드
-	public List<MapBoardDTO> getMapBoardList(int page, int rowsize) {
+	public List<MapBoardDTO> getMapBoardList(int page, int rowsize, String location) {
 		// row_number() 함수 > 결과가 나온 각 행에 순차적으로 고유한 정수를 할당해 주는 분석 함수.
 		// 형식) row_number() over(partition by[그룹핑할 컬럼] order by[정렬할 컬럼])
 		// ==> partition by는 생략이 가능함.
@@ -125,13 +125,13 @@ public class MapBoardDAO {
 		try {
 			openConn();
 			
-			sql = "select * from (select row_number() over(order by board_num desc) rnum, b.* from map_board b) where rnum >= ? and rnum <= ?";
+			sql = "select * from (select row_number() over(order by board_num desc) rnum, b.* from map_board b) where rnum >= ? and rnum <= ? and board_area = ?";
 			
 			ps = con.prepareStatement(sql);
 			
 			ps.setInt(1, startNo);
 			ps.setInt(2, endNo);
-			
+			ps.setString(3, location);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -176,7 +176,7 @@ public class MapBoardDAO {
 				count = rs.getInt(1);
 			}
 			
-			sql = "insert into map_board values(?, ?, ?, default, default, ?, sysdate, ?, ?, '')";
+			sql = "insert into map_board values(?, ?, ?, default, default, ?, sysdate, ?, ?, ?)";
 			
 			ps = con.prepareStatement(sql);
 			
@@ -186,6 +186,7 @@ public class MapBoardDAO {
 			ps.setInt(4, dto.getBoard_writer());
 			ps.setString(5, dto.getBoard_file());
 			ps.setString(6, dto.getBoard_text());
+			ps.setString(7, dto.getBoard_area());
 			
 			result = ps.executeUpdate();
 			
@@ -199,7 +200,7 @@ public class MapBoardDAO {
 	} // insertMapBoard() 메서드 end
 	
 	// board 테이블의 글번호에 해당하는 게시글의 조회수를 증가시키는 메서드
-   public void mapBoardHit(int no) {
+    public void mapBoardHit(int no) {
 
       try {
          openConn();
@@ -217,9 +218,10 @@ public class MapBoardDAO {
          closeConn(rs, ps, con);
       }
 
-   }// boardHit() 메서드 end
+   }		// mapBoardHit() 메서드 end
+    
    
-// 번호에 해당하는 게시물을 조회하는 메서드
+    // 번호에 해당하는 게시물을 조회하는 메서드
 	public MapBoardDTO getContentMapBoard(int no) {
 		
 		MapBoardDTO dto = null;
@@ -248,7 +250,7 @@ public class MapBoardDAO {
 				dto.setBoard_regdate(rs.getString("board_regdate"));
 				dto.setBoard_file(rs.getString("board_file"));
 				dto.setBoard_text(rs.getString("board_text"));
-				
+				dto.setBoard_area(rs.getString("board_area"));
 			}
 			
 		} catch (SQLException e) {
@@ -259,4 +261,317 @@ public class MapBoardDAO {
 		return dto;
 	}		// getContentBoard() 메서드 end
 	
-}
+	// upload 테이블에 게시글 번호에 해당하는 게시글을 수정하는 메서드.
+   public int modiftMapBoard(MapBoardDTO dto) {
+      int result = 0;
+
+      try {
+         openConn();
+
+         sql = "select * from map_board where board_num = ?";
+
+         ps = con.prepareStatement(sql);
+
+         ps.setInt(1, dto.getBoard_num());
+
+         rs = ps.executeQuery();
+
+         if (rs.next()) {
+
+               if (dto.getBoard_file() == null) { // 첨부파일이 없는 경우
+
+                  sql = "update map_board set board_title = ?, board_text = ? where board_num = ?";
+
+                  ps = con.prepareStatement(sql);
+
+                  ps.setString(1, dto.getBoard_title());
+                  ps.setString(2, dto.getBoard_text());
+                  ps.setInt(3, dto.getBoard_num());
+
+               } else { // 첨부파일이 있는 경우
+
+                  sql = "update map_board set board_title = ?, board_text = ?, board_file = ? where board_num = ?";
+
+                  ps = con.prepareStatement(sql);
+
+                  ps.setString(1, dto.getBoard_title());
+                  ps.setString(2, dto.getBoard_text());
+                  ps.setString(3, dto.getBoard_file());
+                  ps.setInt(4, dto.getBoard_num());
+                  
+               }
+               result = ps.executeUpdate();
+
+         }
+
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+      return result;
+
+   }		// modiftMapBoard() 메서드 end
+   
+   // 넘겨 받은 번호에 해당하는 고객을 DB에서 삭제하는 메서드.
+	public int deleteMapBoard(int no) {
+		
+		int result = 0;
+	
+		try {	
+			openConn();
+			
+			sql = "delete from map_board where board_num = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, no);
+			
+			result = ps.executeUpdate();
+			
+			sql = "update map_board set board_num = board_num - 1 where board_num > ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, no);
+			
+			ps.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, ps, con);
+		}
+		return result;
+		
+	}		// deleteMapBoard() 메서드 end
+	
+	// board 테이블에서 중간의 게시글이 삭제된 경우 게시글 번호를 재정렬 하는 메서드.
+	public void updateSequence(int no) {
+
+		try {
+			openConn();
+			
+			sql = "update map_board set board_num = board_num - 1 where board_num > ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, no);
+			
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, ps, con);
+		}
+		
+	}		// updateSequence() 메서드 end
+	
+	// 게시물을 검색하는 메서드.
+	public List<MapBoardDTO> searchMapBoard(String field, String kw, String location) {
+		
+		List<MapBoardDTO> list = new ArrayList<MapBoardDTO>();
+	
+		try {
+			openConn();
+
+			sql = "select * from map_board ";
+			
+			if(field.equals("head")) {
+				sql += "where board_head like ? ";
+			} else if(field.equals("writer")) {
+				sql += "m join member n on m.board_writer = n.member_num where n.member_nick like ? ";
+			} else if(field.equals("title")) {
+				sql += "where board_title like ? ";
+			} else {
+				sql += "where board_text like ? ";
+			}
+			
+			
+			if(field.equals("writer")) {
+				sql += "and m.board_area = ? order by m.board_num desc";
+			}else {
+				sql += "and board_area = ? order by board_num desc";
+			}
+
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, '%'+kw+'%');
+			ps.setString(2, location);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				// board 테이블에서 하나의 레코드를 가져 와서 각각 컬럼의 데이터를 DTO 객체의 setter() 메서드의 인자로 전달.
+				MapBoardDTO dto = new MapBoardDTO();
+				
+				dto.setBoard_num(rs.getInt("board_num"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_head(rs.getString("board_head"));
+				dto.setBoard_hit(rs.getInt("board_hit"));
+				dto.setBoard_like(rs.getInt("board_like"));
+				dto.setBoard_writer(rs.getInt("board_writer"));
+				dto.setBoard_regdate(rs.getString("board_regdate"));
+				dto.setBoard_file(rs.getString("board_file"));
+				dto.setBoard_text(rs.getString("board_text"));
+				dto.setBoard_area(rs.getString("board_area"));
+				
+				list.add(dto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, ps, con);
+		}
+		return list;
+	}		// searchMapBoard() 메서드 end
+	
+	public int clickAboutLike(int board, int mem) {
+		openConn();
+		int count = 0;
+		int result = 0;
+		try {
+			
+			sql = "select count(*) from map_board_like where board_num = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, board);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+				System.out.println(count);
+			}
+			
+			if(count == 0) {
+				// 좋아요 명단에 아무도 없음
+				 sql = "insert into map_board_like values(?, ?)";
+				 
+				 ps = con.prepareStatement(sql);
+				  
+				 ps.setInt(1, board); 
+				 ps.setInt(2, mem);
+				  
+				 ps.executeUpdate();
+
+				 result = 0;
+
+				 return result;
+			}else {
+				// 좋아요 한 사람이 최소 1명이라도 있음
+				sql = "select * from map_board_like where board_num = ?";
+				ps = con.prepareStatement(sql);
+				ps.setInt(1, board);
+				
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					if(rs.getInt("member_num") == mem) {
+						System.out.println("여기가 안들어오나?");
+						// 이미 해당 회원이 좋아요를 누른 경우
+						// 명단에서 제거
+						
+						 sql = "delete from map_board_like where board_num = ? and member_num = ?";
+						  
+						 ps = con.prepareStatement(sql);
+						  
+						 ps.setInt(1, board);
+						 ps.setInt(2, mem);
+						  
+						 ps.executeUpdate();
+						 result = 1;	
+					}
+				}
+				
+				if(result == 0) {
+					 sql = "insert into map_board_like values(?, ?)";
+					 
+					 ps = con.prepareStatement(sql);
+					  
+					 ps.setInt(1, board); ps.setInt(2, mem);
+					  
+					 ps.executeUpdate();
+				}
+				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+		
+	}
+
+	public int findLike(int board_no) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select count(*) from map_board_like where board_num = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, board_no);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, ps, con);
+		}
+		return result;
+	
+	}
+
+	  public void likeUp(int b_no) {
+		  
+		  try {
+			  openConn();
+		  
+			  sql = "update map_board set board_like = board_like + 1 where board_num = ?";
+			  
+			  ps = con.prepareStatement(sql);
+			  
+			  ps.setInt(1, b_no);
+			  
+			  ps.executeUpdate();
+
+		  } catch (SQLException e) {
+			  e.printStackTrace();
+		  } finally {
+			  closeConn(rs, ps,con);
+		  } 
+		  
+ }
+	  
+	  public void likeDown(int b_no) {
+
+		  try {
+			  openConn();
+		  
+			  sql = "update map_board set board_like = board_like - 1 where board_num = ?";
+			  
+			  ps = con.prepareStatement(sql);
+			  
+			  ps.setInt(1, b_no);
+			  
+			  ps.executeUpdate();
+			  
+		  } catch (SQLException e) {
+			  e.printStackTrace();
+		  } finally {
+			  closeConn(rs, ps,con);
+		  } 
+		  
+ }
+	
+	
+}	
