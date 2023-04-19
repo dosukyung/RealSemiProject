@@ -7,8 +7,14 @@ public class QnaDTO {
 	private int qna_hit;
 	private int qna_writer;
 	private String qna_regdate;
+	private String qna_update;
 	private String qna_file;
-	private String qna_text;
+	private String qna_content;
+	private String qna_pwd;
+	private int qna_group;
+	private int qna_step;
+	private int qna_indent;
+	private String qna_nick;
 	
 	public int getQna_num() {
 		return qna_num;
@@ -58,6 +64,14 @@ public class QnaDTO {
 		this.qna_regdate = qna_regdate;
 	}
 	
+	public String getQna_update() {
+		return qna_update;
+	}
+	
+	public void setQna_update(String qna_update) {
+		this.qna_update = qna_update;
+	}
+	
 	public String getQna_file() {
 		return qna_file;
 	}
@@ -65,12 +79,53 @@ public class QnaDTO {
 	public void setQna_file(String qna_file) {
 		this.qna_file = qna_file;
 	}
-	
-	public String getQna_text() {
-		return qna_text;
+
+	public String getQna_content() {
+		return qna_content;
 	}
-	
-	public void setQna_text(String qna_text) {
-		this.qna_text = qna_text;
+
+	public void setQna_content(String qna_content) {
+		this.qna_content = qna_content;
 	}
+
+	public String getQna_pwd() {
+		return qna_pwd;
+	}
+
+	public void setQna_pwd(String qna_pwd) {
+		this.qna_pwd = qna_pwd;
+	}
+
+	public int getQna_group() {
+		return qna_group;
+	}
+
+	public void setQna_group(int qna_group) {
+		this.qna_group = qna_group;
+	}
+
+	public int getQna_step() {
+		return qna_step;
+	}
+
+	public void setQna_step(int qna_step) {
+		this.qna_step = qna_step;
+	}
+
+	public int getQna_indent() {
+		return qna_indent;
+	}
+
+	public void setQna_indent(int qna_indent) {
+		this.qna_indent = qna_indent;
+	}
+
+	public String getQna_nick() {
+		return qna_nick;
+	}
+
+	public void setQna_nick(String qna_nick) {
+		this.qna_nick = qna_nick;
+	}
+
 }
