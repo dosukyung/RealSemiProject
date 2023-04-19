@@ -13,6 +13,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	
+	<!--  태우 수정 내역  -->
 <div id="container">
 	<div class="card">
 		<h3>민증</h3>
