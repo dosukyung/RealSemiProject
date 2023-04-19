@@ -114,7 +114,7 @@
 		 
 		 <button  onclick="window.open('delete.do?no=${Dto.getMember_num()}', '_blank','width=450,height=300')">회원 탈퇴</button>
 		 
-		 <button onclick="location.href='AniamlInsert.no?no=${Dto.getMember_num()}'">동물 등록하기</button>
+		 <button onclick="location.href='AniamlInsert.no?no=${Dto.getMember_num()}'">등록하기</button>
 	 </div>
 	 
 	 </div>
