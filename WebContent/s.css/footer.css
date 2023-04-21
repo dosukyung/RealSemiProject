@@ -1,4 +1,20 @@
 @charset "UTF-8";
-#footer{
+/* #footer{
+max-height: 100px;
 height: 100px;
+width: 100%;
+} */
+#footer{
+	background-color:rgb(249, 246, 239);
+	height: 100px;
+	overflow: hidden;
+}
+#footer hr{
+color:#8a704f;
+}
+.footer_cont {
+	width:100%;
+  /* align-items: center; */
+  text-align: center;
+  color:#8a704f; 
 }
