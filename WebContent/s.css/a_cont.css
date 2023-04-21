@@ -4,16 +4,23 @@ body{
 	max-width: 100%;
 }
 #container{
-	max-width:850px;
-	height:700px;
+	max-width:100%;
+	height:900px;
 	margin:0px auto;
+	background: #f9f6ef;
+	overflow:hidden;
 }
 .card{
-	margin: auto 0px;
+	margin: 0px auto;
+	max-width:850px;
 	padding: 20px;
 	border: 1px solid black;
 	border-radius:10px; 
-	width: 800px;
+/* 	width: 800px; */
+	margin-top: 3%;
+}
+.card >h3{
+	text-align: center;
 }
 #table{
 	text-align: center;
@@ -21,7 +28,7 @@ body{
 	width:300px;
 	float:right;
 	border:none;
-	border-collapse:collapse;
+/* 	border-collapse:collapse; */
 	border-spacing: 0px;
 	
 }
@@ -31,7 +38,7 @@ body{
 }
 #table th{
 	width:20%;	
-}
+ }
 #table td{
 	text-align: left;
 }
@@ -41,9 +48,18 @@ img{
 	height: 400px;
 	transform: translate(10%, 0%);
 }
-#container button{
-	padding: 10px 20px;
+/* #container button{
 	float: right;
 	margin-right: 5%;
 	margin-top: 5%;
 	}
+ */
+.a_del{
+	color:white;
+	margin-top:5%;
+	margin-left:49%;
+	padding: 15px 30px;
+	background-color: #8a704f;
+	border: none;
+	border-radius:10px;
+}

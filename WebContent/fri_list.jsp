@@ -11,20 +11,16 @@
 </head>
 <body>
 	<%@include file="/header.jsp"%>
-
+<div class="body">
 	<div align="center" class="container">
-		<hr width="50%" color="red">
-		<h3>친구 게시판입니다</h3>
-		<hr width="50%" color="red">
-
 		<form method="post" class="table_container">
 			<table id="tion" cellspacing="0">
 				<tr>
-					<th>친구 아이디  </th>
-					<th> 친구 닉네임  </th>
+					<th>아이디  </th>
+					<th> 닉네임  </th>
 					<th> 성별 </th>
-					<th> 연락하기 </th>
-					<th> 친구끊기 </th>
+					<th> 메세지 </th>
+					<th> 삭제 </th>
 				</tr>
 			
 					<c:set var="list" value="${List }" />
@@ -34,12 +30,15 @@
 								<td>${dto.getMember_id()}</td>
 								<td>${dto.getMember_nick()}</td>
 								<td>${dto.getMember_gender()}</td>
-								<td><a href="<%=request.getContextPath() %>/fri_message.to?no=${dto.getMember_num()}">"><img src="s.image/communication.png"
-										class="ima"></a></td>
-								<td><a
-									href="<%=request.getContextPath()%>/fri_delete.to?no=${dto.getMember_num()}">
+								<td><a href="<%=request.getContextPath() %>/fri_message.to?no=${dto.getMember_num()}">
+										<img src="s.image/communication.png" class="ima">
+									</a>
+								</td>
+								<td>
+									<a href="<%=request.getContextPath()%>/fri_delete.to?no=${dto.getMember_num()}">
 										<img src="s.image/close.png" class="ima">
-								</a></td>
+									</a>
+								</td>
 							</tr>
 
 						</c:forEach>
@@ -48,13 +47,15 @@
 					<c:if test="${empty list }">
 						<tr>
 							<td colspan="6" align="center">
-								<h3>전체회원 리스트가 없습니다</h3>
+								<h3>친구가 없습니다</h3>
+							</td>
 					</c:if>
 			</table>
 
 		</form>
 
 	</div>
+</div>	
 	<%@include file="/footer.jsp"%>
 </body>
 </html>

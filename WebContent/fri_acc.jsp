@@ -14,30 +14,22 @@
 	<%@include file="header.jsp"%>
 		<!-- 수락 관련 정보만 화면 뿌려주는 페이지 -->
 	<div align="center" class="container">
-	   <hr width="50%" color="red">
-	      <h3>친구 수락 페이지</h3>
-	   <hr width="50%" color="red">
+
 	   <br>
 
 	   <table class="join">
 	     
-
-	      <c:set var="list" value="${list }" />
-	  <%--   	<c:if test="${list.size()%3==0}">
-	      	<br>
-	      	
-	      	<br>
-	      </c:if>
-	   --%>    
-	    
-	      <c:if test="${!empty list }">
-	      
-	         <c:forEach items="${list }" var="dto">
 	      <tr>
 	         <th>친구 이름</th> 
 	         <th>친구 닉네임</th> 
 	         <th>친구 수락</th>
 	      </tr>
+
+	      <c:set var="list" value="${list }" />
+	    
+	      <c:if test="${!empty list }">
+	      
+	         <c:forEach items="${list }" var="dto">
 	      
 	            <tr>
 	               <td> ${dto.getMember_name() } </td>
@@ -51,9 +43,11 @@
 	      </c:if>
 	      
 	      <c:if test="${empty list }">
-	        
-	               <h2> 친구 신청이 없습니다</h2>
-	            
+	        <tr>
+	      		<td colspan="3">
+	            	<h2> 친구 신청이 없습니다</h2>
+	        	</td>
+	         </tr> 
 	      </c:if>
 	   </table>
 	  </div>

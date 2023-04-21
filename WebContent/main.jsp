@@ -16,6 +16,7 @@
     left: 15px;
     padding:2px;
 }
+
 .info {
     font-size: 12px;
     padding: 5px;
@@ -37,8 +38,9 @@
 <body>
 	<%@include file="header.jsp"%>
 
+<div class="main_con" style="width:100%; height:1000px; background-color: ">
 
-	<div class="map" id="map" style="width:700px; height:550px;"></div>
+	<div class="map" id="map" style="width:700px; height:500px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ca11fd4727e4735fab6d6b4bfc1f2e3"></script>
 <script>
@@ -4859,6 +4861,7 @@ function displayArea(area) {
     });
 }
 </script>
+</div>
 <%@include file="footer.jsp"%>	
 
 

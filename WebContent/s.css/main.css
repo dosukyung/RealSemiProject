@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+#map:hover{
+	cursor:url(../s.image/main_cur.png) 20 30;
+}

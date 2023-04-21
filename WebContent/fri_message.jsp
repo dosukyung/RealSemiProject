@@ -1,23 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	.conH{
+		background-color: rgb(249, 246, 239);
+		height: 50px;
+	}
     /* style for the chat room */
+    .con{
+    	background-color: rgb(249, 246, 239);
+    	height: 1000px;
+    	
+    }
   	 .chat-room {
+
 	    display: flex;
 	    flex-direction: column;
 	    justify-content: flex-end;
-	    height: 500px;
+	    height: 700px;
 	    max-width: 500px;
 	    margin: 0 auto;
 	    overflow-y: scroll;
 	    scroll-behavior: smooth;
-	   
 }
 
     /* style for messages container */
@@ -26,9 +35,9 @@
         overflow: auto;
         margin: 10px;
         padding: 10px;
-        background-color: #fff;
         border-radius: 20px;
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);\
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        background-color:rgb(186, 206, 224);
     }
 
     /* style for the sender name */
@@ -44,6 +53,7 @@
         border-radius: 20px;
         font-size: 14px;
         max-width: 70%;
+        background-color: rgb(255, 235, 51);
     }
 
     /* style for messages sent by me */
@@ -64,7 +74,7 @@
     /* style for messages sent by other users */
     .sent-by-others {
     align-self: flex-start;
-    background-color: #F7F7F7;
+    background-color: rgb(255, 235, 51);
     color: #000;
     margin-bottom: 10px;
     margin-right: auto;
@@ -82,7 +92,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #4C4C4C;
+    background-color:rgb(186, 206, 224);
     color: #fff;
     border-radius: 20px 20px 0 0;
 }
@@ -93,6 +103,7 @@
     font-size: 18px;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
+    color: black;
 }
 
     /* style for the back button */
@@ -132,25 +143,29 @@
 
 /* style for the send button */
 .send-button {
-    background-color: #4C4C4C;
-    color: #fff;
+    background-color: rgb(255, 235, 51);
+    color: black;
     border: none;
     outline: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 </style>
 
 </head>
 <body>
 <%@include file="header.jsp"%>
+<div class="conH"></div>
+<div class="con">
+
 <c:set var ="list" value ="${List}" />
 <c:set var ="me" value ="${Me}" />
 <c:set var ="you" value ="${You}" />
-
 	<div class="chat-room" >
 	    <div class="chat-room-header">
 	        <button class="back-button"><i class="fa fa-chevron-left"></i></button>
@@ -175,12 +190,14 @@
       		<button class="send-button">전송</button>
 	    </form>
 	</div>
+</div>
 <script type="text/javascript">
 	window.onload = function() {
 	  var messagesContainer = document.querySelector(".messages-container");
 	  messagesContainer.scrollTop = messagesContainer.scrollHeight;
 	}
 </script>
+
 <%@include file="footer.jsp"%>
 </body>
 </html>
