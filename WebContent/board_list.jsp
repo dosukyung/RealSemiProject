@@ -55,7 +55,7 @@
 			</c:if>
 			<c:if test="${empty list}">
 				<tr>
-					<td colspan="7" align="center">
+					<td id="xboard" colspan="7" align="center">
 						<h4>전체 게시물 리스트가 없습니다.</h4>
 				</tr>
 			</c:if>
@@ -98,15 +98,17 @@
 				    <a class="page-link" href="board_list.go?location=<%=location %>&page=1" style="color:#000;">
 				    	<span aria-hidden="true">&laquo;</span>
 				    </a>
-			   <li>
-			   		<a class="page-link" href="board_list.go?location=<%=location %>&page=${page - 1}" style="color:#000;">
-			   			<span aria-hidden="true">&lsaquo;</span>
-			   		</a>
-			  </li>
+			  <c:if test="${page != 1}">  
+				   <li>
+				   		<a class="page-link" href="board_list.go?location=<%=location %>&page=${page - 1}" style="color:#000;">
+				   			<span aria-hidden="true">&lsaquo;</span>
+				   		</a>
+				   </li>
+			  </c:if>  	   
 			  <c:forEach begin="${startBlock}" end="${endBlock}" var="i">
 					<c:if test="${i == page}">
 						<li class="page-item" aria-current="page">
-							<a class="page-link" href="board_list.go?location=<%=location %>&page=${i}" style="color:#000;">${i}</a>
+							<a class="page-link" href="board_list.go?location=<%=location %>&page=${i}" style="color:#000; font-weight: 700;">${i}</a>
 						</li>
 					</c:if>
 					<c:if test="${i != page}">
@@ -115,11 +117,13 @@
 						</li>
 					</c:if>
 				</c:forEach>
+			  <c:if test="${page != endBlock}"> 
 			  <li>
 				<a class="page-link" href="board_list.go?location=<%=location %>&page=${page + 1}" style="color:#000;">
 			   			<span aria-hidden="true">&rsaquo;</span>
 			   	</a>
 			  </li>
+			  </c:if>
 			  <li>
 			    <a class="page-item" href="board_list.go?location=<%=location %>&page=${allpage}">
 			    	<span aria-hidden="true">&raquo;</span>

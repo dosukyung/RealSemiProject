@@ -107,8 +107,8 @@
 				<br>
 					
 				<div>
-					<input type="submit" value="수정">&nbsp;&nbsp;
-					<input type="button" value="목록" onclick="location.href='board_list.go?location=<%=cont.getBoard_area()%>&page=<%=pagee%>'">
+					<input id="cont_bt" type="submit" value="수정">&nbsp;&nbsp;
+					<input id="cont_bt" type="button" value="목록" onclick="location.href='board_list.go?location=<%=cont.getBoard_area()%>&page=<%=pagee%>'">
 				</div>
 			
 		</form>	

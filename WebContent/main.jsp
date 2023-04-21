@@ -23,6 +23,15 @@
 .info .title {
     font-weight: bold;
 }
+
+#map > div > div > div:nth-child(2),
+#map > div > div > div:nth-child(3){
+	display: none;
+}
+
+#map > div:nth-child(2){
+	 display: none;
+}
 </style>
 </head>
 <body>
