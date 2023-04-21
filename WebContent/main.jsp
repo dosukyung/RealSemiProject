@@ -24,17 +24,255 @@
 .info .title {
     font-weight: bold;
 }
+
+.vertical-line {
+  border-left: 1px solid black;
+  height: 500px; /* 세로선의 높이 */
+  display: inline-block; /* 세로선이 옆에 오도록 설정 */
+  vertical-align: top; /* 세로선의 맨 위쪽을 기준으로 정렬 */
+  margin: 20px 20px 0; /* 맵과 세로선 간격 설정 */
+}
+
+.write {
+  display: inline-block; /* 세로선이 옆에 오도록 설정 */
+  vertical-align: top; /* 세로선의 맨 위쪽을 기준으로 정렬 */
+  margin-top: 200px;
+  margin-left: 20px;
+}
+
+.map {
+  display: inline-block; /* 맵이 세로선 옆에 오도록 설정 */
+  vertical-align: top; /* 맵의 맨 위쪽을 기준으로 정렬 */
+}
+
+.wrapper {
+  text-align: center; /* wrapper 내부의 요소들을 가운데 정렬 */
+}
+
+.mapT{
+  display: inline-block; /* 맵이 세로선 옆에 오도록 설정 */
+  vertical-align: top; /* 맵의 맨 위쪽을 기준으로 정렬 */
+}
+
+.vertical-line.hidden {
+  display: none;
+}
+
+#toggle-map{
+  background-color: #7f5d34;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* 버튼 내부 여백값 조절 */
+  border-radius: 5px; /* 버튼 모서리를 둥글게 조절 */
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.main-content {
+padding: 100px 0;
+text-align: center;
+}
+
+.main-content h2 {
+font-size: 36px;
+margin-bottom: 30px;
+}
+
+.main-content p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 40px;
+}
+
+.feature {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.feature-item {
+width: 300px;
+margin: 20px;
+text-align: center;
+}
+
+.feature-item img {
+width: 100%;
+}
+
+.feature-item h3 {
+font-size: 24px;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.feature-item p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.team-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.team-member {
+width: 300px;
+margin: 20px;
+text-align: center;
+}
+
+.team-member img {
+width: 100%;
+}
+
+.team-member h3 {
+font-size: 24px;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.team-member p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.contact {
+background-color: #f7c08a;
+padding: 100px 0;
+}
+
+.contact h2 {
+color: #fff;
+font-size: 36px;
+margin-bottom: 30px;
+}
+
+.contact p {
+color: #fff;
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 40px;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+border: none;
+outline: none;
+display: block;
+width: 100%;
+margin-bottom: 20px;
+font-size: 18px;
+padding: 10px;
+}
+
+.contact input {
+height: 50px;
+}
+
+.contact textarea {
+height: 150px;
+resize: none;
+}
+
+.contact button {
+background-color: #fff;
+color: #f7c08a;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+padding: 10px 20px;
+}
+
+.contact button:hover {
+background-color: #f7c08a;
+color: #fff;
+}
+
+.left {
+	float: left;
+	width: 50%;
+}
+
+.right {
+	float: right;
+	width: 50%;
+}
+
+.services{
+	clear: both;
+	margin-top: 50px;
+}
+
+.mainS{
+	font-size: 80px;
+}
+
+p{
+	font-size: 30px;
+}
+
+.mainImg{
+	width: 100%;
+	height: 10%;
+}
+body {
+background-color: #f9f6ef;
+}
+
+#map > div > div > div:nth-child(2),
+#map > div > div > div:nth-child(3){
+   display: none;
+}
+
+#map > div:nth-child(2){
+    display: none;
+}
 </style>
 </head>
 <body>
+<body>
 	<%@include file="header.jsp"%>
+	
+	<div align ="center">
+	<img class="mainImg" src="s.image/main1.jpg">
+	<img class="mainImg" src="s.image/main2.jpg">
+	<img class="mainImg" src="s.image/main3.jpg">
+	
+	
+	
+		<div class = "mapT" >
+			<div class="map"  id="map" style="width:700px; height:550px; '' "></div>
+		</div>
+		<div class="vertical-line"></div>
+		<div class="write">
+			<p align="left"> <b>원하시는 지역구를 선택하여<br> 
+			 매칭을 성사하시거나 <br>
+			 게시판을 이용해보세요.</b></p>
+			
+			
+		</div>
+	</div>
+	
 
-<div class="main_con" style="width:100%; height:1000px; background-color: ">
-
-	<div class="map" id="map" style="width:700px; height:500px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ca11fd4727e4735fab6d6b4bfc1f2e3"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
+
 // 지도에 폴리곤으로 표시할 영역데이터 배열입니다 
 var areas = [
 	{
@@ -1614,6 +1852,7 @@ var areas = [
 			new kakao.maps.LatLng(37.517583818025, 126.8795636062181),
 			new kakao.maps.LatLng(37.517644663400574, 126.87959090371989),
 			new kakao.maps.LatLng(37.51777520665147, 126.8794842836314)
+
 		]
 	
 	}, {
@@ -1829,6 +2068,7 @@ var areas = [
 			new kakao.maps.LatLng(37.486151897140104, 126.87313717618773),
 			new kakao.maps.LatLng(37.485321736123204, 126.87381310612392),
 			new kakao.maps.LatLng(37.48536674926905, 126.87455644219216)
+
 		]
 	
 	}, {
@@ -2998,6 +3238,7 @@ var areas = [
 			new kakao.maps.LatLng(37.52181196916027, 127.01782245481364),
 			new kakao.maps.LatLng(37.512799019929226, 127.02051542809703),
 			new kakao.maps.LatLng(37.48436897301329, 127.034087350284)
+
 		]
 	
 	}, {
@@ -4792,6 +5033,7 @@ var areas = [
 	
 	}
 ];
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -4799,16 +5041,21 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         disableDoubleClick: true,
         level: 9 // 지도의 확대 레벨
     };
+
 var map = new kakao.maps.Map(mapContainer, mapOption),
     customOverlay = new kakao.maps.CustomOverlay({}),
     infowindow = new kakao.maps.InfoWindow({removable: true});
+
 // 지도에 영역데이터를 폴리곤으로 표시합니다 
 for (var i = 0, len = areas.length; i < len; i++) {
     displayArea(areas[i]);
 }
+
 map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN); 
+
 // 다각형을 생상하고 이벤트를 등록하는 함수입니다
 function displayArea(area) {
+
     // 다각형을 생성합니다 
     var polygon = new kakao.maps.Polygon({
         map: map, // 다각형을 표시할 지도 객체
@@ -4819,26 +5066,31 @@ function displayArea(area) {
         fillColor: '#fff',
         fillOpacity: 0.7 
     });
+
     // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다 
     // 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
     kakao.maps.event.addListener(polygon, 'mouseover', function(mouseEvent) {
         polygon.setOptions({fillColor: '#09f'});
+
         customOverlay.setContent('<div class="area">' + area.name + '</div>');
         
         customOverlay.setPosition(mouseEvent.latLng); 
         customOverlay.setMap(map);
     });
+
     // 다각형에 mousemove 이벤트를 등록하고 이벤트가 발생하면 커스텀 오버레이의 위치를 변경합니다 
     kakao.maps.event.addListener(polygon, 'mousemove', function(mouseEvent) {
         
         customOverlay.setPosition(mouseEvent.latLng); 
     });
+
     // 다각형에 mouseout 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 원래색으로 변경합니다
     // 커스텀 오버레이를 지도에서 제거합니다 
     kakao.maps.event.addListener(polygon, 'mouseout', function() {
         polygon.setOptions({fillColor: '#fff'});
         customOverlay.setMap(null);
     }); 
+
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
     kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
         var content = '<div class="info">' + 
@@ -4846,13 +5098,13 @@ function displayArea(area) {
                     "   <a href='board_list.go?location="+area.name+"'>게시판</a>" + '<hr>' +
                     "   <a href='member_match.do?location="+area.name+"'>매칭</a>" +
                     '</div>';
+
         infowindow.setContent(content); 
         infowindow.setPosition(mouseEvent.latLng); 
         infowindow.setMap(map);
     });
 }
 </script>
-</div>
 <%@include file="footer.jsp"%>	
 
 
