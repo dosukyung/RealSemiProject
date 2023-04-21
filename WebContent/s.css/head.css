@@ -1,16 +1,63 @@
 @charset "UTF-8";
 
 #head{
-	height: 100px;
-	background-image: url("../images/bg.jpg");  /* 같은 경로에 이미지 폴더가 없기에 상위로 가서 이미지를 찾아야한다 이때 사용하는 명령어가    "    ../  "다 */
-	background-repeat: no-repeat;
-	text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: black;
+	max-height: 200px;
+	min-height:150px;
+	min-width:1000px;
+ 	background-color:rgb(249, 246, 239);
+/* 	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	 */
+
+	max-width: 100%;
+ }
+.head_logo{
+	display: inline;
+	margin-left: 40%
+}
+.head_logo >img{
+	height: 150px;
+	align-content: center;
+	 object-fit: cover;
 }
 
+
+#head >a{
+	
+	text-decoration: none;	
+	color:#8a704f;
+}
+
+#head > div{
+
+	text-decoration: none;	
+	
+}
 .mainpage{
 	float:left;
+}
+.mainpage >img{
+	margin-left:25px;
+	width: 25px;
+	height:25px;
+}
+
+.f{
+	font-style:inherit;
+	
+}
+
+.qna{
+	
+	
+	font-weight: bold;
+	float: right;
+	margin-right:25px;
+	
+}
+.qna > a{
+	font: bold;
+	text-decoration: none;
 }

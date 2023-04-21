@@ -11,7 +11,7 @@
 	<%@include file="header.jsp"%>
 		<form method="post" action="modify.ok.member.do" class="container">
 			<input type="hidden" name="no" value="${Dto.getMember_num()}">
-			<table border="1" cellspacing="0" class="join">
+			<table  cellspacing="0" class="join">
 				<tr>
 					<th>회원 아이디</th>
 					<td><input type="text" name="id" readonly

@@ -42,6 +42,5 @@
 		</form>
 		
 	</div>
-	<br>
 	<%@include file="footer.jsp"%>
 </body>

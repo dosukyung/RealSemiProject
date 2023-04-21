@@ -18,7 +18,7 @@
 			<br>
 			<div class="fun">
 				<button type="submit">아이디 찾기</button>
-				<img alt="슬퍼요" src="s.image/lol_to.png">
+				<img alt="슬퍼요" src="s.image/button.png">
 			</div>
 	</form>
 <%@include file="footer.jsp"%>

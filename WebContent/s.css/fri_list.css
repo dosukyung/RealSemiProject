@@ -43,7 +43,7 @@ span{
 }
 #tion td{
 	text-align: center;
- 	color:#7f5d34;
+ 	color:#8a704f;
    	border: none;
   	border-bottom: 1px solid black;
   	height: 50px;
@@ -71,11 +71,12 @@ a{
 .ima{
 	max-width: 25px;
 	max-height: 25px;
-/*   position: relative;
+
+  /* position: relative;
   top: 90%;
   left: -30%;
 
-  transform: translate(-50%)
- */
- align-content: center;
+  transform: translate(-50%) */
+  align-content: center;
+
 }

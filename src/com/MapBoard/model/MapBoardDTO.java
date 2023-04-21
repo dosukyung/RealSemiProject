@@ -12,7 +12,14 @@ public class MapBoardDTO {
 	private String board_file;
 	private String board_text;
 	private String board_area;
+	private String nick;
 	
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
 	public int getBoard_num() {
 		return board_num;
 	}

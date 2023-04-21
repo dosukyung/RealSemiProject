@@ -33,7 +33,7 @@ body{
 	border: none;
 }
 
-img{
+.match_img{
 	width: 150px;
 	height:150px;
 	border-radius: 70%;

@@ -9,39 +9,45 @@
 </head>
 <body>
 	<header id="head">
-	
-	<a href="main.jsp" class="mainpage"> 메인페이지</a>
+	<a href="main.jsp" class="mainpage"><img src ="s.image/house.png"></a>
+	 <div  class="head_logo">
+	 	<img src="s.image/r_logo_s.png">
+	 </div>
 	<% 
 		if(session.getAttribute("UserId") == null){
 	%>
-	<a href="m_myinformation.jsp">내 정보</a>
+	<a href="m_myinformation.jsp" class="qna">내 정보 </a>
 	<% 
 		}else{
 	%>
-	<a href="content.member.do?id=<%=(String)session.getAttribute("UserId")%>">내
-		정보</a>
+	<a href="content.member.do?id=<%=(String)session.getAttribute("UserId")%>" class="qna">내정보</a>
 
 	<%	
 		}
 	%>
 
-	<a href="qna_main.jsp">QnA</a>
+	<a href="qna_main.jsp" class="qna">QnA</a>
 
 	<%
 		if(session.getAttribute("UserId") == null){
 	%>
-	<a href="m_login.jsp">로그인</a>
+	<a href="m_login.jsp" class="qna">로그인</a>
 
 	<% 
 		}else{
+			%>
+			<div class="qna">
+			<% 	
 			String userId = (String)session.getAttribute("UserId");
-			out.println(userId + "님 반갑습니다." );
 			out.println("<a href='m_logout.jsp'>로그아웃</a>");
+			%>
+			</div>
+		<%
+
 		}
 		
 	%>
 
-	
 	</header>
 </body>
 </html>

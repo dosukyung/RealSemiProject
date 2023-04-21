@@ -1,23 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	.conH{
+		background-color: rgb(249, 246, 239);
+		height: 50px;
+	}
     /* style for the chat room */
+    .con{
+    	background-color: rgb(249, 246, 239);
+    	height: 1000px;
+    	
+    }
   	 .chat-room {
+
 	    display: flex;
 	    flex-direction: column;
 	    justify-content: flex-end;
-	    height: 500px;
+	    height: 700px;
 	    max-width: 500px;
 	    margin: 0 auto;
 	    overflow-y: scroll;
 	    scroll-behavior: smooth;
-	   
 }
 
     /* style for messages container */
@@ -151,10 +160,12 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
+<div class="conH"></div>
+<div class="con">
+
 <c:set var ="list" value ="${List}" />
 <c:set var ="me" value ="${Me}" />
 <c:set var ="you" value ="${You}" />
-
 	<div class="chat-room" >
 	    <div class="chat-room-header">
 	        <button class="back-button"><i class="fa fa-chevron-left"></i></button>
@@ -179,12 +190,14 @@
       		<button class="send-button">전송</button>
 	    </form>
 	</div>
+</div>
 <script type="text/javascript">
 	window.onload = function() {
 	  var messagesContainer = document.querySelector(".messages-container");
 	  messagesContainer.scrollTop = messagesContainer.scrollHeight;
 	}
 </script>
+
 <%@include file="footer.jsp"%>
 </body>
 </html>

@@ -19,20 +19,20 @@ import com.member.model.MemberDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-@WebServlet("/board_write_ok.go")
-public class MapBoardWriteOk extends HttpServlet {
+@WebServlet("/board_modify_ok.go")
+public class MapBoardModifyOk extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    public MapBoardWriteOk() {
+
+    public MapBoardModifyOk() {
         super();
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 한글 인코딩 설정 작업.
+		// 수정 폼 페이지에서 넘어온 수정 정보들을 MapBoard 테이블에 수정시키는 비지니스 로직.
+		// 한글 처리 작업 진행.
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		// 자료실 폼 페이지에서 넘어온 데이터들을 DB(MapBoard 테이블)에 저장하는 비지니스 로직.
 		MapBoardDTO dto = new MapBoardDTO();
 		
 		// 파일 업로드 시에는 설정해야 할 내용이 있음.
@@ -51,21 +51,23 @@ public class MapBoardWriteOk extends HttpServlet {
 		// new DefaultFileRenamePolicy() : 첨부 파일의 이름이 같은 경우 중복이 안되게 설정
 		MultipartRequest mr = new MultipartRequest(request, saveFolder, fileSize, "UTF-8", new DefaultFileRenamePolicy());
 		
-		// 글쓰기 폼 페이지에서 넘어온 데이터들을 board 테이블에 저장하는 비지니스 로직.
+		
+		// 1단계 : 게시글 입력 폼페이지에서 넘어온 데이터들을 받아 주자.
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("UserId");
 		MemberDAO mdao = MemberDAO.getInstance();
 		MemberDTO mdto = mdao.contentById(member_id);
-	
+		
 		String field = mr.getParameter("field").trim();
 		int writer = mdto.getMember_num();
 		String title = mr.getParameter("title").trim();
 		String cont = mr.getParameter("cont").trim();
-		String location = mr.getParameter("location").trim();
-		System.out.println("mapboard_ok에 넘어온 location 값 : " + location);
 		
 		// 자료실 폼 페이지에서 type="file" 속성으로 되어있으면 getFile() 메서드로 받아 주어야 함.
 		File file = mr.getFile("file");
+		
+		// type="hidden"으로 넘어온 정보도 받아주어야 한다.
+		int no = Integer.parseInt(mr.getParameter("no"));
 		
 		if(file != null) {		// 첨부 파일이 존재한다면
 			// 우선 첨부 파일의 이름을 알아야 함.
@@ -100,6 +102,7 @@ public class MapBoardWriteOk extends HttpServlet {
 			String fDBn = "/"+year+"-"+month+"-"+day+"/"+refn;
 			
 			dto.setBoard_file(fDBn);
+			
 		}
 		
 		if(field.equals("dona")) {
@@ -112,31 +115,31 @@ public class MapBoardWriteOk extends HttpServlet {
 			field = "자유글";
 		}
 		
-		// 첨부파일이 존재하지 않을 때
+		dto.setBoard_num(no);
 		dto.setBoard_head(field);
 		dto.setBoard_writer(writer);
 		dto.setBoard_title(title);
 		dto.setBoard_text(cont);
-		dto.setBoard_area(location);
 		
+		// DTO 객체를 DB에 전송해주어야 함.
 		MapBoardDAO dao = MapBoardDAO.getInstance();
 		
-		int check = dao.insertMapBoard(dto);
+		int check = dao.modiftMapBoard(dto);
+		int page = Integer.parseInt(request.getParameter("page").trim());
 		
 		PrintWriter out = response.getWriter();
 		
 		if(check > 0) {
 			out.println("<script>");
-			out.println("alert('게시글 등록 성공 :)')");
-			out.println("location.href='board_list.go?location="+location+"'");
+			out.println("alert('게시글 수정 성공:)')");
+			out.println("location.href='board_content.go?no="+dto.getBoard_num()+"&page="+page+"'");
 			out.println("</script>");
 		} else {
 			out.println("<script>");
-			out.println("alert('게시글 등록 실패 :(')");
+			out.println("alert('게시글 수정 실패:(')");
 			out.println("history.back()");
 			out.println("</script>");
 		}
 	}
-	
 
 }

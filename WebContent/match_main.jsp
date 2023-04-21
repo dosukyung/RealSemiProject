@@ -19,7 +19,7 @@
 <body>
 	<%@include file="header.jsp"%>
 	<div align ="center" class="container">
-	<h3><%=location%> 지역 매칭 게시판</h3> <br>
+
 	${animal10.getAnimal_image()}
 	
 	<!-- 	<tr>
@@ -30,7 +30,7 @@
 			<table class="match_table" >
 				
 					<th align="center"> 
-						<img src="animal/${animal0.getAnimal_image()}" >
+						<img src="animal/${animal0.getAnimal_image()}" class="match_img" >
 					</th>
 				<tr>
 					<td>
@@ -52,7 +52,7 @@
 						${List.get(0).getMember_addr1() } ${List.get(0).getMember_addr2() }
 						<br>
 						<br>
-						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(0).getMember_num()}'">친구신청</button>
+						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(0).getMember_num()}'"></button>
 					</td>
 				</tr>
 			</table>
@@ -65,7 +65,7 @@
 					<th>회원정보</th>
 				</tr> -->
 					<th align="center"> 
-						<img src="animal/${animal1.getAnimal_image()}" >
+						<img src="animal/${animal1.getAnimal_image()}" class="match_img" >
 					</th>
 				<tr>
 					<td>
@@ -85,7 +85,7 @@
 						<br>
 						 ${List.get(1).getMember_addr1() } ${List.get(1).getMember_addr2() }<br>
 						<br>
-						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(1).getMember_num()}'">친구신청</button>
+						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(1).getMember_num()}'"></button>
 					</td>
 				</tr>
 			</table>
@@ -98,7 +98,7 @@
 					<th>회원정보</th>
 				</tr> -->
 					<th align="center">
-						<img src="animal/${animal2.getAnimal_image()}" >
+						<img src="animal/${animal2.getAnimal_image()}" class="match_img" >
 					</th>
 				<tr>
 					<td>
@@ -115,7 +115,7 @@
 						<br>
 						 ${List.get(2).getMember_addr1() } ${List.get(2).getMember_addr2() }<br><br>
 						<br>
-						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(2).getMember_num()}'">친구신청</button>
+						<button onclick="location.href='<%=request.getContextPath()%>/fri_ok_add.to?no=${List.get(2).getMember_num()}'"></button>
 					</td>
 				</tr>
 			</table>

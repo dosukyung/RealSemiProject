@@ -12,7 +12,7 @@
 			<%@include file="header.jsp"%>
 			
 	<div class="container" align="center">
-				<h3>${Dto.getMember_name()}님 회원정보</h3>
+			<br>
 		
 	<%
 		if(session.getAttribute("UserId") == null){
