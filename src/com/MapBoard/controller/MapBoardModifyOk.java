@@ -63,6 +63,8 @@ public class MapBoardModifyOk extends HttpServlet {
 		String title = mr.getParameter("title").trim();
 		String cont = mr.getParameter("cont").trim();
 		
+		System.out.println(field);
+		
 		// 자료실 폼 페이지에서 type="file" 속성으로 되어있으면 getFile() 메서드로 받아 주어야 함.
 		File file = mr.getFile("file");
 		

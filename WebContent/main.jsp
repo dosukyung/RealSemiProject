@@ -25,6 +25,15 @@
     font-weight: bold;
 }
 
+#map > div > div > div:nth-child(2),
+#map > div > div > div:nth-child(3){
+	display: none;
+}
+
+#map > div:nth-child(2){
+	 display: none;
+}
+
 .vertical-line {
   border-left: 1px solid black;
   height: 500px; /* 세로선의 높이 */
@@ -239,6 +248,7 @@ background-color: #f9f6ef;
 
 #map > div:nth-child(2){
     display: none;
+>>>>>>> refs/heads/master
 }
 </style>
 </head>
