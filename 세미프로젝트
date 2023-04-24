@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-24T03:06:51.976Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="7uruXikXV1eFLOV0hI-p" version="21.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-24T05:12:10.244Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="eY2sAI1FFYSF69ZcVlJy" version="21.0.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1646" dy="1601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2514" dy="2058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -92,16 +92,16 @@
             <mxPoint x="239" y="75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="729QefyNb0CHxvzkXxyP-26" value="Member" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="729QefyNb0CHxvzkXxyP-26" value="Qna" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-200" y="300" width="350" height="260" as="geometry">
             <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="729QefyNb0CHxvzkXxyP-27" value="member_num: int&#xa;member_age: int&#xa;member_name: String&#xa;member_phone: String&#xa;member_email: String&#xa;member_addr1:String&#xa;member_addr2: String&#xa;member_addr3: String&#xa;member_self: String&#xa;member_nick: String&#xa;member_gender: String&#xa;member_animal1: int&#xa;member_animal2: int&#xa;member_animal3: int&#xa;member_id: String&#xa;member_pwd: String&#xa;&#xa;&#xa;&#xa;&#xa;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="729QefyNb0CHxvzkXxyP-26">
-          <mxGeometry y="20" width="350" height="240" as="geometry" />
+        <mxCell id="729QefyNb0CHxvzkXxyP-27" value="qna_num: int&#xa;qna_hit: int&#xa;qna_writer: int&#xa;qna_group: int&#xa;qna_step: int&#xa;qna_indent: int&#xa;qna_title: String&#xa;qna_head: String&#xa;qna_regdate: String&#xa;qna_update: String&#xa;qna_file: String&#xa;qna_content: String&#xa;qna_pwd: String&#xa;qna_nick: String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="729QefyNb0CHxvzkXxyP-26">
+          <mxGeometry y="20" width="350" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="729QefyNb0CHxvzkXxyP-28" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;insertMember(Member): int&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;checkId(member_id): int&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;checkPwd(member_id, member_pwd): int&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;contentById(member_id): member&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;contentByNum(member_num): memebr&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;modifyMember(member): int&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;updateSequence(member_num): void&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;deleteMember(member_num): int&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;getListMatch(board_area, member_num): ArrayList&amp;lt;Member&amp;gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;findId(member_name, memebr_phone): member&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;findPwd(member_name, member_id, member_email): member&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-200" y="560" width="350" height="190" as="geometry" />
+        <mxCell id="729QefyNb0CHxvzkXxyP-28" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-200" y="530" width="350" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
