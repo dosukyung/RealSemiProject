@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-24T05:12:10.244Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="eY2sAI1FFYSF69ZcVlJy" version="21.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-24T05:17:59.356Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="bmNVwgavYj9wc_UHTVwb" version="21.0.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2514" dy="2058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2876" dy="2249" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -97,11 +97,38 @@
             <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-32" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=-0.008;entryY=0.921;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.007;exitY=0.66;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="729QefyNb0CHxvzkXxyP-26" target="729QefyNb0CHxvzkXxyP-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="350" y="50" as="sourcePoint" />
+            <mxPoint x="272" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="729QefyNb0CHxvzkXxyP-27" value="qna_num: int&#xa;qna_hit: int&#xa;qna_writer: int&#xa;qna_group: int&#xa;qna_step: int&#xa;qna_indent: int&#xa;qna_title: String&#xa;qna_head: String&#xa;qna_regdate: String&#xa;qna_update: String&#xa;qna_file: String&#xa;qna_content: String&#xa;qna_pwd: String&#xa;qna_nick: String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="729QefyNb0CHxvzkXxyP-26">
           <mxGeometry y="20" width="350" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="729QefyNb0CHxvzkXxyP-28" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-200" y="530" width="350" height="220" as="geometry" />
+        <mxCell id="729QefyNb0CHxvzkXxyP-28" value="&lt;div style=&quot;&quot;&gt;getQnaCount(): int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;getQnaList(): List&amp;lt;qna&amp;gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;qnaHit(qna_num): void&lt;/div&gt;&lt;div style=&quot;&quot;&gt;getQnaContent(qna_num): qna&lt;/div&gt;&lt;div style=&quot;&quot;&gt;insertQna(qna): int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;updateQna(qna): int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;deleteQna(qna_num): int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;searchListCount(String field,String keyword): int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;getSearchQnaList(String field,String keyword): List&amp;lt;qna&amp;gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-200" y="530" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-29" value="Qna_Reply" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="210" y="410" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-30" value="qna_rno: int&lt;br&gt;qna_bno: int&lt;br&gt;qna_rewriter: String&lt;br&gt;qna_recont: String&lt;br&gt;qna_redate: String&lt;br&gt;qna_reupdate: String" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="729QefyNb0CHxvzkXxyP-29">
+          <mxGeometry y="25" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-31" value="getReplyList(qna_num): List&amp;lt;qna&amp;gt;&lt;br&gt;replyInsert(qna): void" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="210" y="540" width="410" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-33" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1.005;entryY=0.911;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.029;exitY=0.776;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="729QefyNb0CHxvzkXxyP-30" target="729QefyNb0CHxvzkXxyP-27">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="150" y="515" as="sourcePoint" />
+            <mxPoint x="227" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="729QefyNb0CHxvzkXxyP-34" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="729QefyNb0CHxvzkXxyP-29" target="729QefyNb0CHxvzkXxyP-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="216" y="523" as="sourcePoint" />
+            <mxPoint x="162" y="521" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
