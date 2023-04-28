@@ -280,26 +280,24 @@ public class MapBoardDAO {
 
                if (dto.getBoard_file() == null) { // 첨부파일이 없는 경우
 
-                  sql = "update map_board set board_title = ?, board_text = ?, board_head = ? where board_num = ?";
+                  sql = "update map_board set board_title = ?, board_text = ? where board_num = ?";
 
                   ps = con.prepareStatement(sql);
 
                   ps.setString(1, dto.getBoard_title());
                   ps.setString(2, dto.getBoard_text());
-                  ps.setString(3, dto.getBoard_head());
-                  ps.setInt(4, dto.getBoard_num());
+                  ps.setInt(3, dto.getBoard_num());
 
                } else { // 첨부파일이 있는 경우
 
-                  sql = "update map_board set board_title = ?, board_text = ?, board_head = ?, board_file = ? where board_num = ?";
+                  sql = "update map_board set board_title = ?, board_text = ?, board_file = ? where board_num = ?";
 
                   ps = con.prepareStatement(sql);
 
                   ps.setString(1, dto.getBoard_title());
                   ps.setString(2, dto.getBoard_text());
-                  ps.setString(3, dto.getBoard_head());
-                  ps.setString(4, dto.getBoard_file());
-                  ps.setInt(5, dto.getBoard_num());
+                  ps.setString(3, dto.getBoard_file());
+                  ps.setInt(4, dto.getBoard_num());
                   
                }
                result = ps.executeUpdate();

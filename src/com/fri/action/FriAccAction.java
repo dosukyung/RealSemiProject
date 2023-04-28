@@ -12,6 +12,8 @@ import com.fri.model.FriDTO;
 import com.member.model.MemberDAO;
 import com.member.model.MemberDTO;
 
+import oracle.net.aso.s;
+
 public class FriAccAction implements Action {
 
 	@Override
