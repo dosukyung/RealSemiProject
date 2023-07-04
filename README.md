@@ -54,7 +54,7 @@
 <br>
 <br>
 
-👀 <b>기능 구조</b>
+👀 <b>순서도</b>
 <br>
 <br>
 ![기능구조](https://github.com/dosukyung/dosukyung/assets/128382128/ce2e1aba-f19a-4f6f-af52-f825aee9a6d8)
@@ -62,16 +62,22 @@
 <br>
 <br>
 <br>
-✈️ <b>맡은 기능 소개</b>
+💻 <b>기능 소개 1. API</b>
 <br>
 <br>
-![기능설명](https://github.com/dosukyung/dosukyung/assets/128382128/a46eb4ac-1d50-4df3-b336-e033c1406272)
+![기술설명1](https://github.com/dosukyung/dosukyung/assets/128382128/7358620e-0846-49b6-8a81-58cff322b278)
 <br>
-![기능설명2](https://github.com/dosukyung/dosukyung/assets/128382128/63adf545-6334-4310-92b3-18c2084fc877)
+![기술설명2](https://github.com/dosukyung/dosukyung/assets/128382128/7dc67717-ad6a-4b75-805b-9605a9f6bbea)
 <br>
+<br>
+<br>
+<br>
+💻 <b>기능 소개 2. 지역게시판</b>
 ![기능설명3](https://github.com/dosukyung/dosukyung/assets/128382128/77c5574e-194b-4ce8-94a7-59120b70b54e)
 <br>
 ![기능설명4](https://github.com/dosukyung/dosukyung/assets/128382128/a9c16161-201f-497a-99af-717090283062)
+<br>
+![기술설명5](https://github.com/dosukyung/dosukyung/assets/128382128/1a302ca2-a632-4396-864b-70d7c4463c6e)
 <br>
 <br>
 <br>
