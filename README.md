@@ -42,18 +42,13 @@
 <br>
 <br>
 <br>
-📑 <b>요구사항 정의서</b>
-<br>
-<br>
-이미지 넣을 자리
-<br>
-<br>
-<br>
-<br>
 💡 <b>ERD Diagram<br></b>
 <br>
 <br>
-이미지 넣을 자리
+![세미erd](https://github.com/dosukyung/dosukyung/assets/128382128/b28674a5-febb-4c30-b5e9-8fdda98aa099)
+<br>
+지역 게시판 ERD 확대
+![세미게시판erd](https://github.com/dosukyung/dosukyung/assets/128382128/78dba5c9-3960-4ff6-afe5-8c3f9dffe78d)
 <br>
 <br>
 <br>
@@ -62,12 +57,21 @@
 👀 <b>기능 구조</b>
 <br>
 <br>
-이미지 넣을 자리
+![기능구조](https://github.com/dosukyung/dosukyung/assets/128382128/ce2e1aba-f19a-4f6f-af52-f825aee9a6d8)
 <br>
 <br>
 <br>
 <br>
-✈️ <b>기능 소개</b>
+✈️ <b>맡은 기능 소개</b>
+<br>
+<br>
+![기능설명](https://github.com/dosukyung/dosukyung/assets/128382128/a46eb4ac-1d50-4df3-b336-e033c1406272)
+<br>
+![기능설명2](https://github.com/dosukyung/dosukyung/assets/128382128/63adf545-6334-4310-92b3-18c2084fc877)
+<br>
+![기능설명3](https://github.com/dosukyung/dosukyung/assets/128382128/77c5574e-194b-4ce8-94a7-59120b70b54e)
+<br>
+![기능설명4](https://github.com/dosukyung/dosukyung/assets/128382128/a9c16161-201f-497a-99af-717090283062)
 <br>
 <br>
 <br>
