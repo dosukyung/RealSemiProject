@@ -85,6 +85,7 @@
 <br>
 (위 이미지를 클릭하면 gif 효과를 보실 수 있습니다.)
 <br>
+<br>
 ![코드설명1](https://github.com/dosukyung/dosukyung/assets/128382128/7d5fdfcf-d295-4618-82b1-26e625a3ae5b)
 <br>
 머릿말과 검색할 키워드를 검색할 수 있게 코드를 작성하였습니다. 지역별 게시판이기 때문에 location 값도 함께 받아서 작업하였습니다.
