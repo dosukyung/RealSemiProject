@@ -81,9 +81,9 @@
 <br>
 ![기능설명4](https://github.com/dosukyung/dosukyung/assets/128382128/a9c16161-201f-497a-99af-717090283062)
 <br>
-(위 이미지를 클릭하면 gif 효과를 보실 수 있습니다.)
-<br>
 ![기술설명5](https://github.com/dosukyung/dosukyung/assets/128382128/1a302ca2-a632-4396-864b-70d7c4463c6e)
+<br>
+(위 이미지를 클릭하면 gif 효과를 보실 수 있습니다.)
 <br>
 ![코드설명1](https://github.com/dosukyung/dosukyung/assets/128382128/7d5fdfcf-d295-4618-82b1-26e625a3ae5b)
 <br>
