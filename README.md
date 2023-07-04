@@ -75,6 +75,8 @@
 <br>
 <br>
 💻 <b>기능 소개 2. 지역게시판</b>
+<br>
+<br>
 ![기능설명3](https://github.com/dosukyung/dosukyung/assets/128382128/77c5574e-194b-4ce8-94a7-59120b70b54e)
 <br>
 ![기능설명4](https://github.com/dosukyung/dosukyung/assets/128382128/a9c16161-201f-497a-99af-717090283062)
@@ -92,9 +94,16 @@
 <br>
 <br>
 <br>
-
- 
-
+💻 <b>기능 소개 3. 메인 CSS</b>
+<br>
+(이미지를 클릭하면 gif 효과를 보실 수 있습니다.)
+<br>
+<br>
+![메인화면](https://github.com/dosukyung/dosukyung/assets/128382128/15136ef4-9a1d-4320-9486-95a694621b8f)
+<br>
+<br>
+<br>
+<br>
 🔎 <b>reference(API 주소 등등)</b>
 <br>
 <br>
